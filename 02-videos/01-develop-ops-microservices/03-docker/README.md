@@ -128,3 +128,21 @@ Successfully built 2f4c2799b0c0
 
 7, go to https://hub.docker.com/r/pwillhan/microservice-java-base/
 
+## Container Lifecycle
+
+```
+$ docker ps -a <- show all containers
+$ docker rm cass <- remove container named
+```
+
+Left console
+```
+1, $ docker run -d --name cass spotify/cassandra
+3, $ docker stop cass
+```
+
+Right console
+```
+2, $ docker logs -f cass
+```
+
