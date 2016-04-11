@@ -1,2 +1,20 @@
 # Files to ignore
 **/.idea
+**/.css
+**/.img
+**/*.iml
+**/*.log
+**/*.class
+**/.DS_Store
+**/.gradle
+**/build/
+**/gradle/
+**/node_modules/
+**/out/
+
+# Java
+**/target/
+**/dependency-reduced-pom.xml
+
+# TestNG
+**/test-output/
