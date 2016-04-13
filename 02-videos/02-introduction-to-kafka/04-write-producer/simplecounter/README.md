@@ -1,5 +1,21 @@
 # Writing a Kafka Producer
 
+> launch consumer console
+```
+bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic first <- consumer window
+```
+
+> run old producer app
+```
+output:
+Starting...
+0
+1
+2
+... and we are done. This took 1709 ms.
+```
+
+# Command line
 ```
 vi config/server.properties
 add "delete.topic.enable=true" at the end of config/server.properties
