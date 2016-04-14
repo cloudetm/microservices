@@ -1,6 +1,8 @@
 # Building Images
 
-1, create a docker file
+`microservices` is the working dir
+
+1, create a docker file `Dockerfile`
 ```
 FROM alpine
 MAINTAINER pwillhan
