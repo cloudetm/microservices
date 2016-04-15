@@ -1,5 +1,6 @@
 # Files to ignore
 **/.idea
+**/.vagrant
 **/.css
 **/.img
 **/*.iml
