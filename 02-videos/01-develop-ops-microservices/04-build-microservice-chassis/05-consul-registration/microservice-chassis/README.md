@@ -43,4 +43,45 @@ The following environment variables are set when running Sample Service from IDE
 - ```CONSUL_HOST=192.168.99.100``` (Refers to local Consul running in Docker)
 
 - Run the application
+- docker image is at http://192.168.99.100:8500
 - go to http://192.168.99.100:8500/ui/#/dc1/services - you will see two services, `consul` and `test-microservice`
+- go to http://192.168.99.100:8500/v1/health/service/test-microservice - you will see following
+```
+[
+{
+Node: {
+Node: "6f1b45039706",
+Address: "192.168.99.100"
+},
+Service: {
+ID: "test-microservice-721e61e5-f7b6-4ce7-ac0b-d96a471a3ec9",
+Service: "test-microservice",
+Tags: null,
+Address: "192.168.33.1",
+Port: 8080
+},
+Checks: [
+{
+Node: "6f1b45039706",
+CheckID: "service:test-microservice-721e61e5-f7b6-4ce7-ac0b-d96a471a3ec9",
+Name: "Service 'test-microservice' check",
+Status: "passing",
+Notes: "",
+Output: "HTTP GET http://192.168.33.1:8080/health: 200 OK Output: {"healthy":true}",
+ServiceID: "test-microservice-721e61e5-f7b6-4ce7-ac0b-d96a471a3ec9",
+ServiceName: "test-microservice"
+},
+{
+Node: "6f1b45039706",
+CheckID: "serfHealth",
+Name: "Serf Health Status",
+Status: "passing",
+Notes: "",
+Output: "Agent alive and reachable",
+ServiceID: "",
+ServiceName: ""
+}
+]
+}
+]
+```
