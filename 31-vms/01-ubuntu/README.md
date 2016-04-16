@@ -10,7 +10,7 @@ go to http://www.ubuntu.com/download/desktop
 download "Ubuntu 14.04.4 LTS" 32-bit
 ```
 
-### install chrome in ubuntu
+### install chrome in ubuntu - no 32-bit chrome
 ```
 1, download chrome from google
 2, go into the download folder `/tmp/mozilla_pwillhan0$`
