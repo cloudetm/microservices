@@ -6,8 +6,9 @@
 ~# apt-get install rabbitmq-server
 ~# rabbitmq-plugins enable rabbitmq_management
 ~# service rabbitmq-server restart
-~# curl ifconfig.me <- get ip
-Go to http://localhost:15672/ if ip does not work
+~# ifconfig <- get ip address
+inet addr:10.0.2.15
+Go to http://10.0.2.15:15672/ or http://localhost:15672/
 Login - Username: guest  Password: guest
 Click “Admin” tab
 Click “Virtual Hosts” tag on the right side of page, expand “Add a new virtual host”, Name: “/sensu”, click “Add virtual host” button

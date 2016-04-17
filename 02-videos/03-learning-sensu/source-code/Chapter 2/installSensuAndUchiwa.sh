@@ -57,7 +57,7 @@ cat <<EOT > /etc/sensu/uchiwa.json
       "ssl": false,
       "path": "",
       "user": "sensu",
-      "pass": "sensu",
+      "pass": "secret",
       "timeout": 5
     }
   ],
