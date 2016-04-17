@@ -1,46 +1,54 @@
 # Configuring Checks
 
 ```
-# vi /etc/sensu/conf.d/client.json
-# cat /etc/sensu/conf.d/client.json
+# cd /etc/sensu/conf.d/
+# vi check_file.json
+# cat check_file.json
 {
-  "client": {
-	"name": "SensuServer",
-	"address": "10.0.2.15",
-	"subscriptions": [
-  	"Production"
-	]
+  "checks": {
+    "check_file": {
+      "command": "/etc/sensu/plugins/check_file.sh",
+      "subscribers": [
+        "Production"
+      ],
+      "interval": 5
+    }
   }
 }
-# service sensu-client start
-go to https://www.uchiwa.io/#/download to copy download link
-# wget http://dl.bintray.com/palourde/uchiwa/uchiwa_0.14.2-1_amd64.deb
-# dpkg -i uchiwa_0.14.2-1_amd64.deb
-# vi /etc/sensu/uchiwa.json
-# cat /etc/sensu/uchiwa.json
+# cd /etc/sensu/plugins/
+# vi check_file.sh
+# cat check_file.sh
+#!/bin/sh
+if [ -f "/tmp/file" ]
+then
+  echo "file exists!"
+  exit 0
+else
+  echo "file is missing!"
+  exit 2
+fi
+# chmod +x /etc/sensu/plugins/check_file.sh <- make check_file.sh executable
+# service sensu-server restart && service sensu-client restart && service sensu-api restart
+Go to http://10.0.2.15:3000/#/events - Output: “file is missing!”
+# touch /tmp/file
+http://10.0.2.15:3000/#/events turns green after 5 seconds
+# apt-get install Nagios-plugins -y
+# cd /usr/lib/nagios/plugins/
+# ls
+https://www.monitoring-plugins.org/
+# vi /etc/sensu/conf.d/check_disk.json
+# cat /etc/sensu/conf.d/check_disk.json
 {
-  "sensu": [
-	{
-  	"name": "SensuServer",
-  	"host": "localhost",
-  	"port": 4567,
-  	"ssl": false,
-  	"path": "",
-  	"user": "sensu",
-  	"pass": "secret",
-  	"timeout": 5
-	}
-  ],
-  "uchiwa": {
-	"host": "0.0.0.0",
-	"port": 3000,
-	"refresh": 5
+  "checks": {
+    "check_disk": {
+      "command": "/usr/lib/nagios/plugins/check_disk -w 25% -c 10%",
+      "subscribers": [
+        "Production"
+      ],
+      "interval": 5
+    }
   }
 }
-# service uchiwa start
-uchiwa started.
-go to http://10.0.2.15:3000 to view uchiwa web-ui
-click “CLIENTS” on the left side, “SensuServer” is shown
-# service sensu-client stop <- cause an event, “No keepaline sent from client for 180 seconds”
-# service sensu-client start
+# service sensu-server restart && service sensu-client restart && service sensu-api restart
+Go to http://10.0.2.15:3000/#/checks <- will see the checks that we just created
 ```
