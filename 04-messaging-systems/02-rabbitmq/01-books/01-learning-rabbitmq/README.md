@@ -4,13 +4,17 @@ https://www.youtube.com/watch?v=8mFsh1cwlsA
 
 ## Launch RabbitMQ
 
+Start RabbitMQ
 ```
 To have launchd start rabbitmq at login:
   ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
 Then to load rabbitmq now:
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist
-Or, if you don't want/need launchctl, you can just run:
-  rabbitmq-server
+```
+
+Stop RabbitMQ
+```
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist
 ```
 
 ## RabbitMQ Management

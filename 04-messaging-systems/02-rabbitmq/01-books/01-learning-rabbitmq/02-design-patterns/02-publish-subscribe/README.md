@@ -1,6 +1,6 @@
 # publish-subscribe
 
-We can use a fanout exahnge and bind any number of queues to that exchange regardless of the binding key.
+We can use a fanout exchange and bind any number of queues to that exchange regardless of the binding key.
 The Receiver class can be used to bind a specified queue to a fanout exchange and receive messages from it.
 
 ## Run Apps
