@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 public class App
 {
     public static void main( String[] args ) throws InterruptedException {
+        System.out.println(Thread.currentThread().getName());
         final CompetingReceiver receiver1 = new CompetingReceiver();
         receiver1.initialize();
         final CompetingReceiver receiver2 = new CompetingReceiver();
@@ -15,18 +16,19 @@ public class App
         Thread t1 = new Thread(new Runnable() {
             public void run() {
                 String message = receiver1.receive();
-                logger.info("receiver1: "+message);
+                logger.info(Thread.currentThread().getName() +  " receiver1: "+message);
             }
         });
         Thread t2 = new Thread(new Runnable() {
             public void run() {
                 String message = receiver2.receive();
-                logger.info("receiver2: "+message);
+                logger.info(Thread.currentThread().getName() +  " receiver2: "+message);
             }
         });
 
         t1.start();
         t2.start();
+
         t1.join();
         t2.join();
         receiver1.destroy();

@@ -36,7 +36,7 @@ public class CompetingReceiver {
 
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             message = new String(delivery.getBody());
-            LOGGER.info("Message received: " + message);
+            LOGGER.info(Thread.currentThread().getName() + " Message received: " + message);
             return message;
 
         } catch (IOException e) {
