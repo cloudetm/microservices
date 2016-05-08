@@ -2,6 +2,10 @@
 https://www.rabbitmq.com/install-homebrew.html
 https://www.youtube.com/watch?v=8mFsh1cwlsA
 
+## add to path
+
+vi ~/.bash_profile
+
 ## Launch RabbitMQ
 
 Start RabbitMQ
