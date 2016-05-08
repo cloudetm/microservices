@@ -54,7 +54,6 @@ LMDV-WHAN:sender whan$ java -jar target/app-1.0-SNAPSHOT.jar Fifth message.....
 
 receiver1 output:
 ```
-LMDV-WHAN:receiver whan$ java -jar target/app-1.0-SNAPSHOT.jar
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received 'Second message..'
  [x] Done
@@ -64,7 +63,6 @@ LMDV-WHAN:receiver whan$ java -jar target/app-1.0-SNAPSHOT.jar
 
 receiver2 output:
 ```
-LMDV-WHAN:receiver whan$ java -jar target/app-1.0-SNAPSHOT.jar
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received 'First message.'
  [x] Done

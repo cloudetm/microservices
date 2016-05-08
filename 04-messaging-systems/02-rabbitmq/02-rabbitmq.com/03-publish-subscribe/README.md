@@ -47,19 +47,17 @@ sender output:
 
 receiver1 output:
 ```
-LMDV-WHAN:receiver whan$ java -jar target/app-1.0-SNAPSHOT.jar
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received 'info: Hello World!'
 ```
 
 receiver2 output:
 ```
-LMDV-WHAN:receiver whan$ java -jar target/app-1.0-SNAPSHOT.jar
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received 'info: Hello World!'
 ```
 
-list bindings - there are two random generated queues for `logs` exchange
+> `$ rabbitmqctl list_bindings` - there are two random generated queues for `logs` exchange
 ```
 Listing bindings ...
 	exchange	amq.gen-19P1n3niq4ZCAy_H6fhmVw	queue	amq.gen-19P1n3niq4ZCAy_H6fhmVw	[]
