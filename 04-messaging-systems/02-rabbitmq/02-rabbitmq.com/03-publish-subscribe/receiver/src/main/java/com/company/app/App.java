@@ -15,8 +15,11 @@ public class App
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
+        // exchangeDeclare(String exchange, String type)
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+
         String queueName = channel.queueDeclare().getQueue();
+        // queueBind(String queue, String exchange, String routingKey)
         channel.queueBind(queueName, EXCHANGE_NAME, "");
 
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");

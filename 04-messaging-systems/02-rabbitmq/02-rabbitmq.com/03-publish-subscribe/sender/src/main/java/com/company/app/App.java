@@ -6,6 +6,10 @@ import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
 
+/*
+The producer program, which emits log messages. We publish messages to our logs exchange instead of the nameless one.
+We need to supply a routingKey when sending, but its value is ignored for fanout exchanges.
+ */
 public class App
 {
     private static final String EXCHANGE_NAME = "logs";
@@ -15,10 +19,12 @@ public class App
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
+        // exchangeDeclare(String exchange, String type)
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 
         String message = getMessage(args);
 
+        // basicPublish(String exchange, String routingKey, BasicProperties props, byte[] body)
         channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes());
         System.out.println(" [x] Sent '" + message + "'");
 

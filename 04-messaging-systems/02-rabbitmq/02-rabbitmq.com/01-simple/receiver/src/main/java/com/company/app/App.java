@@ -14,6 +14,7 @@ public class App
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
+        // queueDeclare(String queue, boolean durable, boolean exclusive, boolean autoDelete, Map<String, Object> arguments)
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
@@ -24,6 +25,7 @@ public class App
               System.out.println(" [x] Received '" + message + "'");
             }
         };
+        // basicConsume(String queue, boolean autoAck, Consumer callback)
         channel.basicConsume(QUEUE_NAME, true, consumer);
     }
 }
