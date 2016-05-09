@@ -1,5 +1,6 @@
 package com.godaddy.pubsub.componentTests;
 
+import com.godaddy.pubsub.Consts;
 import com.godaddy.pubsub.pub.client.ServiceClient;
 import com.godaddy.pubsub.pub.model.messages.MessageTicket;
 import com.godaddy.pubsub.pub.model.subscriptions.SubscriberMessageDeliveryUri;
@@ -129,8 +130,6 @@ public class TopicComponentTests extends TestBase {
         assertThat(createTopicResponse.code()).isEqualTo(422);
     }
 
-    private static final String EXCHANGE_NAME = "direct_exchange";
-
     @Test
     public void publish_message() throws IOException {
 
@@ -161,16 +160,16 @@ public class TopicComponentTests extends TestBase {
     private void receive_message_by_using_temporary_queue_has_routing(TopicId topicId) throws IOException {
 
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost(Consts.HOST);
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
         // exchangeDeclare(String exchange, String type)
-        channel.exchangeDeclare(EXCHANGE_NAME, "direct");
+        channel.exchangeDeclare(Consts.EXCHANGE_NAME, "direct");
         String queueName = channel.queueDeclare().getQueue();
 
         // queueBind(String queue, String exchange, String routingKey)
-        channel.queueBind(queueName, EXCHANGE_NAME, topicId.toString());
+        channel.queueBind(queueName, Consts.EXCHANGE_NAME, topicId.toString());
 
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 

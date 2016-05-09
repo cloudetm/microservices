@@ -1,5 +1,6 @@
 package com.godaddy.pubsub.dataAccess;
 
+import com.godaddy.pubsub.Consts;
 import com.godaddy.pubsub.dataAccess.interfaces.MessageDeliveryListener;
 import com.godaddy.pubsub.dataAccess.interfaces.MessageRepository;
 import com.godaddy.pubsub.model.Message;
@@ -44,28 +45,34 @@ public class RabbitMqMessageRepository implements MessageRepository {
 
     }
 
-    private static final String EXCHANGE_NAME = "direct_exchange";
-
     // https://www.rabbitmq.com/tutorials/tutorial-four-java.html
     @Override
     public void publish(Topic topic, Message msg) throws IOException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
 
-        // exchangeDeclare(String exchange, String type)
-        channel.exchangeDeclare(EXCHANGE_NAME, "direct");
+        Connection connection = null;
+        Channel channel = null;
 
-        String topicId = topic.getTopicId().toString();
-        String message = new String(msg.getData());
+        try{
+            ConnectionFactory factory = new ConnectionFactory();
+            // setHost(String host)
+            factory.setHost(Consts.HOST);
+            connection = factory.newConnection();
+            channel = connection.createChannel();
 
-        // basicPublish(String exchange, String routingKey, BasicProperties props, byte[] body)
-        channel.basicPublish(EXCHANGE_NAME, topicId, null, message.getBytes("UTF-8"));
-        System.out.println(" [x] Sent '" + topicId + "':'" + message + "'");
+            // exchangeDeclare(String exchange, String type)
+            channel.exchangeDeclare(Consts.EXCHANGE_NAME, "direct");
 
-        channel.close();
-        connection.close();
+            String topicId = topic.getTopicId().toString();
+            String message = new String(msg.getData());
+
+            // basicPublish(String exchange, String routingKey, BasicProperties props, byte[] body)
+            channel.basicPublish(Consts.EXCHANGE_NAME, topicId, null, message.getBytes("UTF-8"));
+            System.out.println(" [x] Sent '" + topicId + "':'" + message + "'");
+        }
+        finally{
+            channel.close();
+            connection.close();
+        }
     }
 
     @Override
