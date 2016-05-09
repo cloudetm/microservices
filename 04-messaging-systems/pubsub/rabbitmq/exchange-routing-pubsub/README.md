@@ -1,6 +1,12 @@
-# Pubsub
+# Pubsub rabbitmq
+
+https://www.rabbitmq.com/tutorials/tutorial-four-java.html
 
 An API for asynchronous, durable pub-sub messaging.
+
+## Run Test
+
+> TopicComponentTests.publish_message()
 
 ## Run app local via Docker
 
