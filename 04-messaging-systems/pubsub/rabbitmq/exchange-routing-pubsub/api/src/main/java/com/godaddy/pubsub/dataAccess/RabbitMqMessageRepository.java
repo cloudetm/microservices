@@ -44,7 +44,9 @@ public class RabbitMqMessageRepository implements MessageRepository {
 
     }
 
-    // https://www.rabbitmq.com/tutorials/tutorial-one-java.html
+    private static final String EXCHANGE_NAME = "direct_exchange";
+
+    // https://www.rabbitmq.com/tutorials/tutorial-four-java.html
     @Override
     public void publish(Topic topic, Message msg) throws IOException {
         ConnectionFactory factory = new ConnectionFactory();
@@ -52,13 +54,16 @@ public class RabbitMqMessageRepository implements MessageRepository {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
+        // exchangeDeclare(String exchange, String type)
+        channel.exchangeDeclare(EXCHANGE_NAME, "direct");
+
         String topicId = topic.getTopicId().toString();
-
-        channel.queueDeclare(topicId, false, false, false, null);
-
         String message = new String(msg.getData());
-        channel.basicPublish("", topicId, null, message.getBytes());
-        System.out.println(" [x] Sent '" + message + "'");
+
+        // basicPublish(String exchange, String routingKey, BasicProperties props, byte[] body)
+        channel.basicPublish(EXCHANGE_NAME, topicId, null, message.getBytes("UTF-8"));
+        System.out.println(" [x] Sent '" + topicId + "':'" + message + "'");
+
         channel.close();
         connection.close();
     }
