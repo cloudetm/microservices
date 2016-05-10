@@ -25,6 +25,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.paradoxical</groupId>
+            <artifactId>rabbitmq</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
         </dependency>

@@ -5,6 +5,9 @@ import com.godaddy.pubsub.pub.model.subscriptions.Subscription;
 import com.godaddy.pubsub.pub.model.topics.Topic;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 
 public interface MessageRepository {
     void createSubscription(Subscription sub);
@@ -19,7 +22,7 @@ public interface MessageRepository {
 
     void removeListener(Subscription sub);
 
-    void publish(Topic topic, Message msg) throws IOException;
+    void publish(Topic topic, Message msg) throws IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException;
 
     void init();
 

@@ -9,11 +9,24 @@ import com.google.inject.Singleton;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import io.paradoxical.rabbitmq.Exchange;
+import io.paradoxical.rabbitmq.PublisherProviderImpl;
+import io.paradoxical.rabbitmq.connectionManagment.ChannelProvider;
+import io.paradoxical.rabbitmq.connectionManagment.Host;
+import io.paradoxical.rabbitmq.connectionManagment.SimpleChannelProvider;
+import io.paradoxical.rabbitmq.queues.EventBase;
+import io.paradoxical.rabbitmq.queues.QueuePublisher;
+import lombok.Getter;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 
 @Singleton
 public class RabbitMqMessageRepository implements MessageRepository {
+
     @Override
     public void createSubscription(Subscription sub) {
 
@@ -46,7 +59,7 @@ public class RabbitMqMessageRepository implements MessageRepository {
 
     // https://www.rabbitmq.com/tutorials/tutorial-one-java.html
     @Override
-    public void publish(Topic topic, Message msg) throws IOException {
+    public void publish(Topic topic, Message msg) throws IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         Connection connection = factory.newConnection();
@@ -61,6 +74,9 @@ public class RabbitMqMessageRepository implements MessageRepository {
         System.out.println(" [x] Sent '" + message + "'");
         channel.close();
         connection.close();
+    }
+
+    private void old(Topic topic, Message msg) throws IOException {
     }
 
     @Override

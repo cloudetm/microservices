@@ -22,6 +22,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @Path("/api/v1/topics")
@@ -94,7 +97,7 @@ public class TopicResource {
     public Response publishMessage(
             @PathParam("topicId") final TopicId topicId,
             @HeaderParam("X-Request-Id") final String requestId,
-            final InputStream inputStream) throws IOException {
+            final InputStream inputStream) throws IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException {
 
         Topic topic = topicsRepository.getTopic(topicId);
         Message message = Message.builder()
