@@ -38,11 +38,7 @@ receiver2 output: receive info, warning, error
 
 > build `$ mvn clean install`
 
-> run following
-
-```
-$ java -jar target/app-1.0-SNAPSHOT.jar error "ERROR occur"
-```
+> run `$ java -jar target/app-1.0-SNAPSHOT.jar error "ERROR occur"`
 
 sender output:
 ```
