@@ -6,6 +6,8 @@ An API for asynchronous, durable pub-sub messaging.
 
 ## Run Test
 
+> delete the queue is associated to the topic on RabbitMQ UI if the queue is already exist.
+
 > TopicComponentTests.publish_message()
 
 ## Run app local via Docker
