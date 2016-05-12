@@ -5,21 +5,19 @@ The Receiver class can be used to bind a specified queue to a fanout exchange an
 
 ## Run Apps
 
-### sender - the first time
-1, launch sender app
-2, go to http://localhost:15672/#/exchanges a new `pubsub_exchange` exchange is created.
+### Receiver
 
-### receiver
-1, launch receiver app
+> build `$ mvn clean install`
 
-### sender
-1, launch sender app again to publish message
+> run `$ java -jar target/app-1.0-SNAPSHOT.jar` - waiting
 
-### receiver log file
-/02-publish-subscribe/mylogs.log
+### Sender
+
+> build `$ mvn clean install`
+
+> run `$ java -jar target/app-1.0-SNAPSHOT.jar`
+
+receiver output:
 ```
-16-03-2016 23:55:32 INFO  PublishSubscribeReceiver:42 - Message received: Test message.
-16-03-2016 23:55:32 INFO  PublishSubscribeReceiver:42 - Message received: Test message.
-16-03-2016 23:55:32 INFO  App:24 - receiver2: Test message.
-16-03-2016 23:55:32 INFO  App:18 - receiver1: Test message.
+my message
 ```

@@ -20,7 +20,7 @@ Secondly, once we disconnect the consumer the queue should be automatically dele
 
 ### Receiver
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > open two terminals for receivers
 
@@ -40,7 +40,7 @@ receiver2 output:
 
 ### Sender
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > run following
 

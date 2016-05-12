@@ -16,7 +16,7 @@ the message to all the matching queues. A message with routing key black will be
 
 ### Receiver
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > open two terminals for receivers
 
@@ -36,7 +36,7 @@ receiver2 output: receive info, warning, error
 
 ### Sender
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > run following
 

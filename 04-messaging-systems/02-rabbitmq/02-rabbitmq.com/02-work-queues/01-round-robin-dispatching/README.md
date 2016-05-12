@@ -6,7 +6,7 @@ https://www.rabbitmq.com/tutorials/tutorial-two-java.html
 
 ### Receiver
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > open two terminals for receivers
 
@@ -26,7 +26,7 @@ receiver2 output:
 
 ### Sender
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > run following
 

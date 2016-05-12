@@ -6,7 +6,7 @@ https://www.rabbitmq.com/tutorials/tutorial-one-java.html
 
 ### Sender
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > run `$ java -jar target/app-1.0-SNAPSHOT.jar`
 
@@ -23,7 +23,7 @@ RabbitMQ
 
 ### Receiver
 
-> build `$ mvn package`
+> build `$ mvn clean install`
 
 > run `$ java -jar target/app-1.0-SNAPSHOT.jar`
 
