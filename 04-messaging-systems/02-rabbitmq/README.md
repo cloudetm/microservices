@@ -23,3 +23,15 @@ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist
 
 ## RabbitMQ Management
 http://localhost:15672
+
+### default username and password
+
+username: guest
+password: guest
+
+### Admin - Users
+
+- expand `Add a user`
+- Username: foo  Password: foo  Tags: click Admin
+- click `Add user` button
+- click the user to set permissions like `Virual Host`
