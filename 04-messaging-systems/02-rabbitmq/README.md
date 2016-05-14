@@ -35,3 +35,11 @@ password: guest
 - Username: foo  Password: foo  Tags: click Admin
 - click `Add user` button
 - click the user to set permissions like `Virual Host`
+
+## Configuration File
+
+> `/usr/local/etc/rabbitmq/rabbitmq-env.conf`
+
+## Environment Variables
+
+https://www.rabbitmq.com/relocate.html
