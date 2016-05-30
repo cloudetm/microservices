@@ -2,7 +2,7 @@ package com.godaddy.pubsub.resources.api.v1;
 
 import com.godaddy.logging.Logger;
 import com.godaddy.logging.LoggerFactory;
-import com.godaddy.pubsub.dataAccess.interfaces.MessageMiddlewareDriver;
+import com.godaddy.pubsub.queues.interfaces.MessageMiddlewareDriver;
 import com.godaddy.pubsub.dataAccess.interfaces.SubscriptionsRepository;
 import com.godaddy.pubsub.dataAccess.interfaces.TopicsRepository;
 import com.godaddy.pubsub.delivery.HttpDeliveryProtocol;

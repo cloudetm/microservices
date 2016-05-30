@@ -12,6 +12,9 @@ public class DefaultApplicationModules {
                 new JsonMapperModule(),
                 new DeliveryModule(),
                 new ListenerModule(),
-                new ListenerOptionsModule());
+                new ListenerOptionsModule(),
+                new MessageProcessorControllerModule(),
+                new MessageProcessorModule(),
+                new RabbitMqMiddlewareModule());
     }
 }

@@ -7,7 +7,7 @@ import com.google.common.collect.ImmutableList;
 // config store
 public interface TopicsRepository {
     ImmutableList<Topic> getAllTopics();
-    Topic getTopic(TopicId topicId);
-    void createTopic(Topic topic);
-    void deleteTopic(TopicId topicId);
+    Topic getTopic(final TopicId topicId);
+    void createTopic(final Topic topic);
+    void deleteTopic(final TopicId topicId);
 }

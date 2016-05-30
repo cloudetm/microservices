@@ -1,7 +1,7 @@
 package com.godaddy.pubsub.resources.api.v1;
 
 import com.godaddy.pubsub.dataAccess.TopicNamingScheme;
-import com.godaddy.pubsub.dataAccess.interfaces.MessageMiddlewareDriver;
+import com.godaddy.pubsub.queues.interfaces.MessageMiddlewareDriver;
 import com.godaddy.pubsub.dataAccess.interfaces.SubscriptionsRepository;
 import com.godaddy.pubsub.dataAccess.interfaces.TopicsRepository;
 import com.godaddy.pubsub.model.Message;

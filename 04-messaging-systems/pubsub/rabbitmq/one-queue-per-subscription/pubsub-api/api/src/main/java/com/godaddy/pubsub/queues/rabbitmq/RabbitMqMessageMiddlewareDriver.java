@@ -1,6 +1,6 @@
 package com.godaddy.pubsub.queues.rabbitmq;
 
-import com.godaddy.pubsub.dataAccess.interfaces.MessageMiddlewareDriver;
+import com.godaddy.pubsub.queues.interfaces.MessageMiddlewareDriver;
 import com.godaddy.pubsub.model.Message;
 import com.godaddy.pubsub.pub.model.subscriptions.Subscription;
 import com.godaddy.pubsub.pub.model.topics.Topic;
