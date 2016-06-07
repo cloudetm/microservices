@@ -18,6 +18,15 @@ http://www.osboxes.org/centos/#centos-7-1-1511-vbox
 
 > `yum update`
 
+### Auto capture keyboard
+
+> left `Command` key to release keyboard and mouse
+
+### Tips And Tricks
+
+https://wiki.centos.org/TipsAndTricks/BecomingRoot
+
+
 ### Install Jenkins
 
 #### Install Jenkins 1.6 - USE THIS
@@ -48,25 +57,21 @@ export PATH=$PATH:/opt/jdk1.8.0_91/bin:/opt/jdk1.8.0_91/jre/bin
 
 > `echo $JAVA_HOME`
 
-### Install maven
+#### Install maven
 
 > wget https://maven.apache.org/download.cgi
 
 http://preilly.me/2013/05/10/how-to-install-maven-on-centos/
 
-### Install git
+#### Install git
 
 > `yum install git`
 
 > `git --version`
 
-### Auto capture keyboard
-
-> left `Command` key to release keyboard and mouse
-
-### Tips And Tricks
-
-https://wiki.centos.org/TipsAndTricks/BecomingRoot
+#### Install Slave nodes
+ 
+https://www.safaribooksonline.com/library/view/jenkins-essentials/9781783553471/ch07.html
 
 #### Install Jenkins 2.7 and Java
 
@@ -74,7 +79,8 @@ https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distri
 
 > `sudo service jenkins start/stop/restart/status`
 
-#### Jenkins plugins
+#### Install Intellij
 
-> select custom install and install all plugins
+https://ezzata.wordpress.com/2012/09/19/how-to-install-intellij-idea-on-linux/
+
 

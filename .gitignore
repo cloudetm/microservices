@@ -13,6 +13,7 @@
 **/gradle/
 **/node_modules/
 **/out/
+**/logs/
 
 # Java
 **/target/
