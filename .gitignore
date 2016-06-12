@@ -8,6 +8,7 @@
 **/*.class
 **/.DS_Store
 **/.gradle
+**/.travis.yml
 **/.settings
 **/build/
 **/gradle/
