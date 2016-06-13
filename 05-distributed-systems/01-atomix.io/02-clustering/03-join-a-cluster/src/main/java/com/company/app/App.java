@@ -4,12 +4,21 @@ import io.atomix.AtomixReplica;
 import io.atomix.catalyst.transport.Address;
 import io.atomix.catalyst.transport.local.LocalServerRegistry;
 import io.atomix.catalyst.transport.local.LocalTransport;
+import io.atomix.catalyst.transport.netty.NettyTransport;
 import io.atomix.copycat.server.storage.Storage;
 import io.atomix.copycat.server.storage.StorageLevel;
 import io.atomix.group.DistributedGroup;
 import io.atomix.group.LocalMember;
 import io.atomix.group.messaging.MessageConsumer;
 import io.atomix.group.messaging.MessageProducer;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class App {
     private static LocalServerRegistry registry = new LocalServerRegistry();
@@ -28,26 +37,22 @@ public class App {
 
     // node = replica
     public static void main(String[] args) throws Exception {
+        Address address1 = nextAddress();
 
         // NODE 1
-        Address address1 = nextAddress();
-        AtomixReplica node1 = buildReplica(address1);
-
-        node1.bootstrap().join();
+        List<Address> cluster = new ArrayList<>();
+        cluster.add(address1);
+        AtomixReplica node1 = buildReplica(cluster.get(0));
+        node1.bootstrap(cluster).join();
         System.out.println("node1 boostrapped");
 
-        // create group
-        DistributedGroup group = node1.getGroup("group").get();
-
-        group.onJoin(m -> System.out.println(m.id() + " joined the group"));
-
-        // join node into group
-        LocalMember member1 = group.join().get();
+        DistributedGroup group1 = node1.getGroup("group").get();
+        LocalMember member1 = group1.join().get();
 
         MessageConsumer<Object> consumer1 = member1.messaging().consumer("topic");
         consumer1.onMessage(m -> System.out.println("consumer1: " + m.message()));
 
-        group.election().onElection(term -> {
+        group1.election().onElection(term -> {
             if (term.leader().equals(member1)) {
                 System.out.println("member1 is leader");
             }
@@ -55,37 +60,39 @@ public class App {
 
         // NODE 2
         Address address2 = nextAddress();
-        AtomixReplica node2 = buildReplica(address2);
+        cluster.add(address2);
+        AtomixReplica node2 = buildReplica(cluster.get(1));
+        node2.bootstrap(cluster).join();
+        System.out.println("node2 boostrapped");
 
-        node2.join(address1).join();
-        System.out.println("node2 joined");
-
-//        LocalMember member2 = group.join(node2).get();
-        DistributedGroup group1 = node2.getGroup("group").get();
-        LocalMember member2 = group1.join().get();
+        DistributedGroup group2 = node2.getGroup("group").get();
+        LocalMember member2 = group2.join().get();
 
         MessageConsumer<Object> consumer2 = member2.messaging().consumer("topic");
         consumer2.onMessage(m -> System.out.println("consumer2: " + m.message()));
 
-        group.election().onElection(term -> {
+        group2.election().onElection(term -> {
             if (term.leader().equals(member2)) {
                 System.out.println("member2 is leader");
             }
         });
 
-        MessageProducer<Object> producer = group.messaging().producer("topic");
-        producer.send("group says hello");
+        MessageProducer<Object> producer = group1.messaging().producer("topic");
+        producer.send("hello");
 
-        MessageProducer<Object> producer1 = member2.messaging().producer("topic");
-        producer1.send("members says hello");
-
-        // NODE 3
-//        Address address3 = nextAddress();
-//        AtomixReplica node3 = buildReplica(address3);
-//
-//        node3.join(address1).join();
-//        System.out.println("node3 joined");
-
-
+        // Joining a Cluster
+        Address address3 = nextAddress();
+        AtomixReplica newNode = buildReplica(address3);
+        newNode.join(cluster);
+        System.out.println("# new node joined"); // <- HERE
     }
 }
+/*
+output:
+node1 boostrapped
+member1 is leader
+node2 boostrapped
+consumer1: hello
+# new node joined
+consumer2: hello
+ */
