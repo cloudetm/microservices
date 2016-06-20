@@ -37,13 +37,34 @@ public class App {
 
     // node = replica
     public static void main(String[] args) throws Exception {
-        Address address1 = nextAddress();
-        Address address2 = nextAddress();
+        forLoop();
+        oneByOne();
+    }
+
+    private static void forLoop() {
+        System.out.println("#forLoop");
+        List<Address> cluster = new ArrayList<>();
+
+        for(int i = 0; i < 2; i++){
+            Address address = nextAddress();
+            cluster.add(address);
+            AtomixReplica node = buildReplica(address);
+            node.bootstrap(cluster).join();
+            System.out.println("bootstrapped");
+        }
+
+        System.out.println(Arrays.toString(cluster.toArray()));
+    }
+
+    private static void oneByOne() throws InterruptedException, ExecutionException {
+        System.out.println("\n#oneByOne");
 
         // NODE 1
         List<Address> cluster = new ArrayList<>();
+
+        Address address1 = nextAddress();
         cluster.add(address1);
-        AtomixReplica node1 = buildReplica(cluster.get(0));
+        AtomixReplica node1 = buildReplica(address1);
         node1.bootstrap(cluster).join();
         System.out.println("node1 boostrapped");
 
@@ -60,8 +81,9 @@ public class App {
         });
 
         // NODE 2
+        Address address2 = nextAddress();
         cluster.add(address2);
-        AtomixReplica node2 = buildReplica(cluster.get(1));
+        AtomixReplica node2 = buildReplica(address2);
         node2.bootstrap(cluster).join();
         System.out.println("node2 boostrapped");
 
@@ -83,6 +105,12 @@ public class App {
 }
 /*
 output:
+#forLoop
+bootstrapped
+bootstrapped
+[localhost/127.0.0.1:0, localhost/127.0.0.1:1]
+
+#oneByOne
 node1 boostrapped
 member1 is leader
 node2 boostrapped
