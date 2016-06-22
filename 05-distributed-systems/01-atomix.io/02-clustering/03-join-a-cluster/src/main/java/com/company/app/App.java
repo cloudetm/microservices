@@ -4,7 +4,6 @@ import io.atomix.AtomixReplica;
 import io.atomix.catalyst.transport.Address;
 import io.atomix.catalyst.transport.local.LocalServerRegistry;
 import io.atomix.catalyst.transport.local.LocalTransport;
-import io.atomix.catalyst.transport.netty.NettyTransport;
 import io.atomix.copycat.server.storage.Storage;
 import io.atomix.copycat.server.storage.StorageLevel;
 import io.atomix.group.DistributedGroup;
@@ -13,12 +12,7 @@ import io.atomix.group.messaging.MessageConsumer;
 import io.atomix.group.messaging.MessageProducer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class App {
     private static LocalServerRegistry registry = new LocalServerRegistry();
@@ -43,10 +37,15 @@ public class App {
         List<Address> cluster = new ArrayList<>();
         cluster.add(address1);
         AtomixReplica node1 = buildReplica(cluster.get(0));
+
+        System.out.println(cluster.toString());
         node1.bootstrap(cluster).join();
         System.out.println("node1 boostrapped");
 
+        // create group
         DistributedGroup group1 = node1.getGroup("group").get();
+
+        // join node into group
         LocalMember member1 = group1.join().get();
 
         MessageConsumer<Object> consumer1 = member1.messaging().consumer("topic");
@@ -62,6 +61,8 @@ public class App {
         Address address2 = nextAddress();
         cluster.add(address2);
         AtomixReplica node2 = buildReplica(cluster.get(1));
+
+        System.out.println(cluster.toString());
         node2.bootstrap(cluster).join();
         System.out.println("node2 boostrapped");
 
@@ -79,12 +80,6 @@ public class App {
 
         MessageProducer<Object> producer = group1.messaging().producer("topic");
         producer.send("hello");
-
-        // Joining a Cluster
-        Address address3 = nextAddress();
-        AtomixReplica newNode = buildReplica(address3);
-        newNode.join(cluster);
-        System.out.println("# new node joined"); // <- HERE
     }
 }
 /*
