@@ -2,6 +2,12 @@
 
 > `$ irb`
 
+**Exit**
+
+```
+irb(main):024:0> exit
+```
+
 **Integer**
 
 ```
