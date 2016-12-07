@@ -9,5 +9,5 @@
 ## Common commands
 
 - $ vagrant up <- turn the environment on
-- $ vagrant halt <- turn the environment off
-- $ vagrant destroy 
+- $ vagrant halt 
+- $ vagrant destroy <- stop the application
