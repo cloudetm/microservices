@@ -7,6 +7,6 @@ while arr[i]
   i += 1
 end
 
-# output
+# output:
 # ** while - loop through array **
 # 1 2 3 4 5

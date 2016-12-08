@@ -12,9 +12,9 @@ end
 
 print arr, "\n"
 
-# output
+# output:
 # ** while do end **
-#     count=0
+# count=0
 # count=1
 # count=2
 # count=3

@@ -11,7 +11,7 @@ end while count < max
 
 print arr, "\n"
 
-# output
+# output:
 # ** while - begin end while **
 # count=0
 # count=1

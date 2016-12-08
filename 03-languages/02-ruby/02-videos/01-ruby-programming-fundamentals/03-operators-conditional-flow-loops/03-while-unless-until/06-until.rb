@@ -6,7 +6,7 @@ until count_to == 5
   count_to += 1
 end
 
-# output
+# output:
 # ** until **
 # We are at 0
 # We are at 1

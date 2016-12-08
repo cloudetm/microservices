@@ -11,7 +11,7 @@ unless temperature > 75
   puts "should feel nice outside"
 end
 
-# output
+# output:
 # ** if !() **
 # should feel nice outside
 # ** unless **
