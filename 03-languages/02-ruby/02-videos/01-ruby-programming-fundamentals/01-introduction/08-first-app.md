@@ -4,7 +4,7 @@
 $ irb
 irb(main):001:0> print "Please enter your name:"
 Please enter your name:=> nil
-irb(main):002:0> name = gets.chomp <- read input string
+irb(main):002:0> name = gets.chomp <- read input string, chomp cuts off the new line
 Joe
 => "Joe"
 irb(main):004:0> print "Please enter your weight with a decimal:"
