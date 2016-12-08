@@ -16,3 +16,17 @@ puts start_string [0] # `I` access character sequence by using index which it is
 puts "0123456"[3] # `3`
 puts "0123456"[2,4] # `2345` get four characters start from index 2
 puts "0123456"[2..4] # `234` get characters from index 2 to 4
+
+# output
+# just a string
+# I'm just a string
+# I"m just a string
+# 1: I'm just a string
+# 2: I'm just a string
+# 3: I'm --just a string
+# 4: I'm just a string
+# 5: I'm just a string
+# I
+# 3
+# 2345
+# 234
