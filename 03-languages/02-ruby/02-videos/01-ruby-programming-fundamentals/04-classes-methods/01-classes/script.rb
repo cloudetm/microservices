@@ -4,7 +4,7 @@ puts "o.class=#{o.class}" # o.class=Object
 
 class Customer
   def customer_id=(customer_id)
-    @customer_id = customer_id
+    @customer_id = customer_id # @@customer_id is local variable
   end
   def customer_id
     @customer_id
