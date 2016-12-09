@@ -37,7 +37,3 @@ puts customer2.customer_id = 11 # 11
 puts customer2.city = "Houston" # Houston
 
 puts customer2 # #<Customer:0x007f8aca848a08>
-
-
-
-
