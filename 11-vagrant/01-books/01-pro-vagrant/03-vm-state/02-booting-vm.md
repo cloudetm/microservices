@@ -1,6 +1,4 @@
-# Pro Vagrant
-
-https://www.safaribooksonline.com/library/view/pro-vagrant/9781484200735/
+# Booting the VM
 
 ## `$ vagrant up`
 
@@ -10,6 +8,7 @@ https://www.safaribooksonline.com/library/view/pro-vagrant/9781484200735/
 
 > Stage 2: importing the base box into the project such as VirtualBox - image dir: `cd ~/VirtualBox VMs/`
 
-`$ ls -l ~/VirtualBox\ VMs/` to verify
+`$ ls -l ~/VirtualBox\ VMs/` to v erify
 
 > Stage 3: booting the system
+

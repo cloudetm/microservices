@@ -6,6 +6,7 @@
 **/*.iml
 **/*.log
 **/*.class
+**/*.box
 **/.DS_Store
 **/.gradle
 **/.travis.yml
