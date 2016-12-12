@@ -2,6 +2,8 @@
 
 https://www.vagrantup.com/
 
+> Language: Ruby
+
 ## installation - virtualbox and vagrant
 https://www.youtube.com/watch?v=RhhF8Yh7OnE
 

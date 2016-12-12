@@ -8,6 +8,6 @@
 
 ## Common commands
 
-- $ vagrant up <- turn the environment on
-- $ vagrant halt 
-- $ vagrant destroy <- stop the application
+- `$ vagrant up` <- turn the environment on
+- `$ vagrant halt` 
+- `$ vagrant destroy` <- stop the application
