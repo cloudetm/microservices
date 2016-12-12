@@ -1,0 +1,3 @@
+# Salt
+
+https://saltstack.com/
