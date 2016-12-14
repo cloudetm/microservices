@@ -34,9 +34,7 @@ public class App
         frCities.add("Paris");
         manualCities.put("FR", frCities);
 
-        System.out.println("HERE_1");
-
-        System.err.println(
+        System.out.println(
                 String.format("Manual: GB=%s, FR=%s",
                         manualCities.get("GB"),
                         manualCities.get("FR")));
@@ -49,10 +47,15 @@ public class App
 
         multiMapCities.put("FR", "Paris");
 
-        System.out.println("HERE_2");
-        System.err.println(
+        System.out.println(
                 String.format("MultiMap: GB=%s, FR=%s",
                         multiMapCities.get("GB"),
                         multiMapCities.get("FR")));
     }
 }
+
+/*
+output:
+Manual: GB=[London, Southampton], FR=[Paris]
+MultiMap: GB=[London, Southampton], FR=[Paris]
+ */
