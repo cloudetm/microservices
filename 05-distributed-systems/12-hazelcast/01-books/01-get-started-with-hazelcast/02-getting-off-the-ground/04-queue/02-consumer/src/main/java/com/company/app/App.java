@@ -2,9 +2,11 @@ package com.company.app;
 
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IMap;
 import com.hazelcast.core.IQueue;
 
+/*
+Consumer - client worker
+ */
 public class App
 {
     public static void main( String[] args ) throws InterruptedException {
@@ -19,8 +21,9 @@ public class App
 }
 /*
 
-1, Run the app
-2, interact with test console
+1, Run the app (client worker)
+
+2, Interact with test console - offer items to the queue for the client to process
 $ java -cp hazelcast-3.6.2.jar com.hazelcast.console.ConsoleApp
 hazelcast[countries] > ns arrivals
 namespace: arrivals
@@ -30,7 +33,7 @@ hazelcast[arrivals] > q.offer JFK
 true
 hazelcast[arrivals] >
 
-Result: output
+Output: (client worker)
 New arrival from: Heathrow
 New arrival from: JFK
  */
