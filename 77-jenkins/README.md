@@ -45,5 +45,3 @@ https://www.safaribooksonline.com/library/view/jenkins-essentials/9781783553471/
 https://www.youtube.com/watch?v=Doi1IJ3bnkY
 
 http://www.cimgf.com/2015/05/26/setting-up-jenkins-ci-on-a-mac-2/
-
-
