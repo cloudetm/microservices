@@ -1,6 +1,7 @@
 # Create Hello World
 
 ## Run the app
+
 ```
 $ sbt
 [info] Set current project to hello-akka (in build file:)
