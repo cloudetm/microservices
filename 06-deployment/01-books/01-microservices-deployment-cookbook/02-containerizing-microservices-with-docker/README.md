@@ -155,6 +155,52 @@ So we have to replace localhost in your CURL command with the IP of the containe
 Docker host port number: the left of the colon `8080:`
 Container port number: the right of the colon `:8080`
 
+```
+$ docker run -p 8080:8080 packt/geolocation
+INFO  [2017-03-18 05:55:15,913] org.eclipse.jetty.util.log: Logging initialized @975ms
+INFO  [2017-03-18 05:55:15,970] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2017-03-18 05:55:15,971] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2017-03-18 05:55:15,974] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2017-03-18 05:55:15,974] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2017-03-18 05:55:15,975] io.dropwizard.server.ServerFactory: Starting App
+INFO  [2017-03-18 05:55:16,047] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6731787b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+INFO  [2017-03-18 05:55:16,047] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@16f7b4af{HTTP/1.1,[http/1.1]}{0.0.0.0:8081}
+INFO  [2017-03-18 05:55:16,049] org.eclipse.jetty.server.Server: jetty-9.3.z-SNAPSHOT
+INFO  [2017-03-18 05:55:16,454] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /contacts (com.company.app.resource.ContactResource)
+    POST    /contacts (com.company.app.resource.ContactResource)
+    DELETE  /contacts/{id} (com.company.app.resource.ContactResource)
+    GET     /contacts/{id} (com.company.app.resource.ContactResource)
+    PUT     /contacts/{id} (com.company.app.resource.ContactResource)
+    GET     /geolocation (com.company.app.resource.GeoLocationResource)
+    POST    /geolocation (com.company.app.resource.GeoLocationResource)
+
+INFO  [2017-03-18 05:55:16,456] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5c748168{/,null,AVAILABLE}
+INFO  [2017-03-18 05:55:16,460] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2017-03-18 05:55:16,460] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2017-03-18 05:55:16,463] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@46678e49{/,null,AVAILABLE}
+INFO  [2017-03-18 05:55:16,468] org.eclipse.jetty.server.AbstractConnector: Started application@6731787b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+INFO  [2017-03-18 05:55:16,468] org.eclipse.jetty.server.AbstractConnector: Started admin@16f7b4af{HTTP/1.1,[http/1.1]}{0.0.0.0:8081}
+INFO  [2017-03-18 05:55:16,468] org.eclipse.jetty.server.Server: Started @1531ms
+```
+
+> in-memory `jetty` servlet container instance is running on port 8080
+
+INFO  [2017-03-18 05:55:16,468] org.eclipse.jetty.server.AbstractConnector: Started application@6731787b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+
 > Find the `IP` of the Docker Machine VM
 
 ```
