@@ -2,6 +2,8 @@
 
 ## Docker Toolbox (Mac)
 
+> Install
+
 https://www.docker.com/products/docker-toolbox
 
 > launch `Docker Quickstart Terminal`

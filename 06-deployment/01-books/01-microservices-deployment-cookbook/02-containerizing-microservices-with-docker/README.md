@@ -1,8 +1,12 @@
 # Containerizing Microservices with Docker
 
+> Install
+
+https://www.docker.com/products/docker-toolbox
+
 > Launch `Docker Terminal`
 
-> List VirtualBox VMs
+> List Docker-Hosts (VirtualBox VMs)
 
 ```
 $ docker-machine ls
@@ -10,7 +14,7 @@ NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DO
 default   *        virtualbox   Running   tcp://192.168.99.100:2376           v17.03.1-ce-rc1   
 ```
 
-> Stop docker default
+> Stop Docker-Host default
 
 ```
 $ docker-machine stop default
@@ -21,11 +25,11 @@ NAME      ACTIVE   DRIVER       STATE     URL   SWARM   DOCKER    ERRORS
 default   -        virtualbox   Stopped                 Unknown  
 ```
 
-> Remove docker default
+> Remove Docker-Host default
 
 $ docker-machine rm default
 
-> Create docker default
+> Create Docker-Host default
 
 ```
 $ docker-machine create -d virtualbox --virtualbox-memory=4096 --virtualbox-cpu-count=4 default
@@ -53,7 +57,7 @@ NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DO
 default   *        virtualbox   Running   tcp://192.168.99.100:2376           v17.03.1-ce-rc1   
 ```
 
-> Start docker default if it is stopped
+> Start Docker-Host default if it is stopped
 
 $ docker-machine start default
 
@@ -61,9 +65,9 @@ $ docker-machine start default
 
 $ eval $(docker-machine env default)
 
-> Open `VirtualBox` to see the Docker host is running
+> Open `VirtualBox` to see the Docker-Host is running
 
-> Spin off the first Docker container
+> Spin off the first Docker-Container
 
 ```
 $ docker run hello-world
@@ -119,7 +123,7 @@ at /01-microservices-deployment-cookbook/01-building-microservices-with-java/01-
 `.` - it says that the Dockerfile is located in the current directory
 
 ```
-/01-server/$ docker build -t packt/geolocation .
+$ docker build -t packt/geolocation .
 Sending build context to Docker daemon 15.13 MB
 Step 1/5 : FROM openjdk:8
  ---> c59e84b8bbbf
@@ -223,4 +227,12 @@ $ curl -H "Content-Type: application/json" -X POST -d'{"timestamp": 1468203975, 
 ```
 $ curl http://192.168.99.100:8080/geolocation
 [{"latitude":41.803488,"longitude":-88.14404,"userId":"f1196aac-470e-11e6-beb8-9e71128cae77","timestamp":1468203975}]
+```
+
+> Push image to Docker Hub
+
+```
+$ docker tag packt/geolocation pwillhan/geolocation
+$ docker push pwillhan/geolocation
+https://hub.docker.com/r/pwillhan/geolocation/
 ```
