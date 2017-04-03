@@ -19,19 +19,33 @@ docker-machine ip default
 
 ```
 docker build -t packt/geolocation .
+or
+docker build -t pwillhan/geolocation .
 docker images
 ```
 
-> Run Docker-Container image
+> Start a container running geolocation - Run Docker-Container image
 
 ```
 docker run -p 8080:8080 packt/geolocation
 curl http://192.168.99.100:8080/contacts
 ```
 
-> List running Docker-Containers
+> Remove Docker-Container image
+
+```
+$ docker rmi packt/geolocation
+Untagged: packt/geolocation:latest
+```
+
+> List running Docker-Container images
 
 docker ps -a
+
+> Stop Docker-Containers
+
+docker stop $(docker ps -a -q)
+
 
 > Push Docker-Image to Docker Hub
 
