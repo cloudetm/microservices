@@ -16,6 +16,12 @@ $ docker run -d --name mailer dockerinaction/ch2_mailer
 
 > Start a running interactive containers
 
+```
+$ docker run -it busybox
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+```
+
 $ docker run --interactive --tty --link web:web --name web_test busybox:latest /bin/sh
 
 *in container virtual terminal*
