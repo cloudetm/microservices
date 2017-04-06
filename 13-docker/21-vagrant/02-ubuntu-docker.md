@@ -1,10 +1,12 @@
-# Installing Docker in ubuntu
-
-https://www.youtube.com/watch?v=bV5vbNK3Uhw&list=PLkA60AVN3hh_6cAz8TUGtkYbJSL2bdZ4h
+# vagrant - ubuntu docker
 
 ## Install virtualbox and vagrant
 
 https://www.youtube.com/watch?v=RhhF8Yh7OnE
+
+### Search Vagrant Boxes
+
+https://atlas.hashicorp.com/boxes/search
 
 ### Create and destroy vm - ubuntu uses sudo apt-get-udpate
 
@@ -15,8 +17,12 @@ https://www.youtube.com/watch?v=wPmvN7KcOlI
 ```
 $ mkdir vagrant
 $ cd vagrant/
+
 $ vagrant init hashicorp/precise64 # DO NOT because old version 12.04
-Get new version Xenial 16.04 from https://atlas.hashicorp.com/ubuntu/boxes/xenial64
+
+Search new version Xenial 16.04 at https://atlas.hashicorp.com/boxes/search 
+https://atlas.hashicorp.com/ubuntu/boxes/xenial64
+
 $ vagrant init ubuntu/xenial64
 $ ls -al
 $ less Vagrantfile
@@ -24,8 +30,11 @@ $ vagrant up
 $ vagrant ssh # user=vagrant password=vagrant
 ~$ exit
 $ vagrant destroy
-$ lsb_release -a # version
 ```
+
+> ubuntu version
+
+$ lsb_release -a
 
 ## Docker
 
@@ -52,10 +61,16 @@ $ sudo apt-get install docker-ce
 $ sudo docker run hello-world # test
 ```
 
+> run as root
+
+$ sudo -i # run as root
+
 > docker run
 
+
+
+
 ```
-$ sudo -i # run as root
 # docker run -it -v /john1 busybox
 / # ls
 bin    dev    etc    home   john1  proc   root   sys    tmp    usr    var
@@ -64,13 +79,4 @@ ctrl-p-q  # keep in running
 # docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 busybox             latest              00f017a8c2a6        3 weeks ago         1.11 MB
-# docker -v
-Docker version 17.03.1-ce, build c6d412e
-```
-
-> Reboot
-
-```
-$ sudo -i
-root@ubuntu-xenial:~# reboot
 ```

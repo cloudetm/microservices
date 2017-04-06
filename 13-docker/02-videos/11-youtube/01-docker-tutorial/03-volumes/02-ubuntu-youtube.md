@@ -2,23 +2,55 @@
 
 https://www.youtube.com/watch?v=rlK1JYsM6Aw
 
+## vagrant ubuntu
+
+> Launch vagrant ubuntu
+
+```
+$ cd vagrant
+$ vagrant up
+$ sudo -i # run as root
+# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+busybox             latest              00f017a8c2a6        3 weeks ago         1.11 MB
+```
+
+> Setup
+
+```
+root@ubuntu-xenial:~# nano myimage.dockerfile
+root@ubuntu-xenial:~# cat myimage.dockerfile 
+FROM ubuntu:14.04
+
+VOLUME ["/john2"]
+
+ADD file1 /john2/file1
+
+CMD ["/bin/sh"]
+root@ubuntu-xenial:~# nano file1
+root@ubuntu-xenial:~# cat file1
+file_1
+```
+
 > Create image has volume
 
 ```
-$ docker rmi -f myimage
+root@ubuntu-xenial:~# docker rmi -f myimage
 Untagged: myimage:latest
 Deleted: sha256:7e72453518c47ab12001a73c377fb514945abf7513c1657f1335e6d4937485ee
-$ docker build -f myimage.dockerfile -t myimage .
-$ docker images  (show my image)
+
+root@ubuntu-xenial:~# docker build -f myimage.dockerfile -t myimage .
+# docker images  (show my image)
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
 myimage                      latest              7e72453518c4        12 minutes ago      188 MB
-$ docker inspect myimage
-$ docker history myimage
+root@ubuntu-xenial:~# docker inspect myimage
+root@ubuntu-xenial:~# docker history myimage
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
 00f017a8c2a6        3 weeks ago         /bin/sh -c #(nop)  CMD ["sh"]                   0 B                 
 <missing>           3 weeks ago         /bin/sh -c #(nop) ADD file:c9ecd8ff00c653fb65   1.11 MB          
-$ docker build -f myimage.dockerfile -t myimage .
-$ docker run -it myimage
+root@ubuntu-xenial:~# docker run -it myimage
+# ls  
+bin  boot  dev	etc  home  john2  lib  lib64  media  mnt  opt  proc  root  run	sbin  srv  sys	tmp  usr  var
 # cat john2/file1
 file_1
 # exit
@@ -27,7 +59,7 @@ file_1
 > Add second volume `john1` to the image already has volume
 
 ```
-$ docker run -it -v /john1 myimage
+root@ubuntu-xenial:~# docker run -it -v /john1 myimage
 # ls
 bin  boot  dev	etc  home  john1  john2  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
