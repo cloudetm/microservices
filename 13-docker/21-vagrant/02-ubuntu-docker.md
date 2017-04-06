@@ -67,9 +67,6 @@ $ sudo -i # run as root
 
 > docker run
 
-
-
-
 ```
 # docker run -it -v /john1 busybox
 / # ls

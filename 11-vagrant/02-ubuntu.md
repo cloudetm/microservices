@@ -1,8 +1,4 @@
-# vagrant
-
-https://www.vagrantup.com/
-
-> Language: Ruby
+# vagrant - ubuntu
 
 ## installation - virtualbox and vagrant
 
@@ -35,34 +31,11 @@ $ vagrant destroy
 $ lsb_release -a # version
 ```
 
-> Errors
+> run as root
 
-http://stackoverflow.com/questions/23874260/error-when-trying-vagrant-up
+$ sudo -i # run as root
 
-#### create vm from http://www.vagrantbox.es/
-
-```
-$ rm Vagrantfile <- remove Vagrantfile if it already exists
-- find virtualbox has puppet
-$ vagrant init wheezy64
-$ vagrant box add wheezy64 https://www.dropbox.com/s/23gupgb0xompvkm/Wheezy64.box?dl=1
-$ vagrant up
-$ vagrant ssh
-```
-
-### commands
-
-```
-vagrant init
-vagarnt up
-vagrant ssh
-vagrant destroy
-vagrant reload
-```
-
-## vm
-
-### installation
+### ubuntu command
 
 ```
 ~$ sudo apt-get update
