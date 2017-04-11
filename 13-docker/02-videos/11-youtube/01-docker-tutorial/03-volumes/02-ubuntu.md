@@ -1,6 +1,12 @@
-# youtube examples
+# youtube
 
 https://www.youtube.com/watch?v=rlK1JYsM6Aw
+
+## references
+
+https://docs.docker.com/engine/tutorials/dockervolumes/
+
+https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/
 
 ## vagrant ubuntu
 
@@ -10,9 +16,6 @@ https://www.youtube.com/watch?v=rlK1JYsM6Aw
 $ cd vagrant
 $ vagrant up
 $ sudo -i # run as root
-# docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-busybox             latest              00f017a8c2a6        3 weeks ago         1.11 MB
 ```
 
 > Setup
@@ -35,7 +38,7 @@ file_1
 > Create image has volume
 
 ```
-root@ubuntu-xenial:~# docker rmi -f myimage
+root@ubuntu-xenial:~# docker rmi -f myimage # optional
 Untagged: myimage:latest
 Deleted: sha256:7e72453518c47ab12001a73c377fb514945abf7513c1657f1335e6d4937485ee
 

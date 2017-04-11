@@ -19,13 +19,16 @@ docker images
 ## Remove all images and containers
 
 ```
+# Stop all containers
+docker stop $(docker ps -a -q)
+
 # Delete all containers
 docker rm $(docker ps -a -q)
 # Force delete all containers
 docker rm -f $(docker ps -a -q)
+
 # Delete all images
 docker rmi $(docker images -q)
 # Force delete all images
 docker rmi -f $(docker images -q)
 ```
-

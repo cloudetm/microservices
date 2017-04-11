@@ -63,7 +63,9 @@ $ sudo docker run hello-world # test
 
 > run as root
 
+```
 $ sudo -i # run as root
+```
 
 > docker run
 
