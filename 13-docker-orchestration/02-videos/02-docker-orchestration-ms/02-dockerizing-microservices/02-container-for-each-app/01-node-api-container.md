@@ -1,21 +1,12 @@
-# Docker centos example
+# Docker node api example
 
-> Start Docker
+## Docker run
 
-```
-$ cd vagrant/centos/
-$ vagrant up
-$ vagrant ssh
-$ su root
-Password: vagrant
-[root@sqlsansby05 vagrant]# systemctl start docker
-```
-
-> Install node
+> Pull node docker image
 
 ```
-[root@sqlsansby05 vagrant]# docker run node
-[root@sqlsansby05 vagrant]# docker run -it node
+# docker run node
+# docker run -it node
 > console.log('hello');
 hello
 ctrl+c, ctrl+c # exit
@@ -26,10 +17,10 @@ ctrl+c, ctrl+c # exit
 > Create server.js, package.json, Dockerfile
 
 ```
-[root@localhost vagrant]# ls
+# ls
 Dockerfile  package.json  server.js
 
-[root@localhost vagrant]# cat server.js 
+# cat server.js 
 var express = require('express');
 var app = express();
 
@@ -42,7 +33,7 @@ app.listen(port, function() {
 	console.log('server started');
 });
 
-[root@localhost vagrant]# cat package.json 
+# cat package.json 
 {
   "name": "2-2",
   "version": "1.0.0",
@@ -58,7 +49,7 @@ app.listen(port, function() {
   "license": "ISC"
 }
 
-[root@localhost vagrant]# cat Dockerfile 
+# cat Dockerfile 
 FROM node:latest
 
 RUN mkdir -p /user/src/app
@@ -75,8 +66,8 @@ CMD [ "npm", "start" ]
 > Build Docker Image
 
 ```
-[root@localhost vagrant]# docker build -t myservice .
-[root@localhost vagrant]# docker images
+# docker build -t myservice .
+# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 myservice           latest              28d78733908d        3 minutes ago       669MB
 ```
@@ -84,12 +75,12 @@ myservice           latest              28d78733908d        3 minutes ago       
 > Run and Test Docker Container
 
 ```
-[root@localhost vagrant]# docker run -P -d myservice
+# docker run -P -d myservice
 7dffafe848c74d10fe6afbf72b28ef3a0106ee8458806a65240595aa369b0154
-[root@localhost vagrant]# docker ps
+# docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                     NAMES
 7dffafe848c7        myservice           "npm start"         5 seconds ago       Up 4 seconds        0.0.0.0:32769->3000/tcp   awesome_dijkstra
 
-[root@localhost vagrant]# curl http://localhost:32769
+# curl http://localhost:32769
 {"msg":"helloworld"}
 ```

@@ -8,9 +8,9 @@ https://docs.docker.com/engine/tutorials/dockervolumes/
 
 https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/
 
-## vagrant ubuntu
+## vagrant centos
 
-> Launch vagrant ubuntu
+> Launch vagrant centos
 
 ```
 $ cd vagrant/centos
@@ -20,7 +20,7 @@ $ vagrant up
 > run as root
 
 ```
-$ sudo -i # run as root
+$ su root
 ```
 
 > Setup

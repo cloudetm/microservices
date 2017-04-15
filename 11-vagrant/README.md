@@ -4,6 +4,16 @@ https://www.vagrantup.com/
 
 > Language: Ruby
 
+## Installing the Software
+
+> Git
+
+> VirtualBox
+
+> Vagrant
+
+https://www.vagrantup.com/docs/installation/
+
 ## commands
 
 ```

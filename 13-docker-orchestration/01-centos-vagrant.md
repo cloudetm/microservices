@@ -1,6 +1,6 @@
 # vagrant - centos
 
-## installation - virtualbox and vagrant
+## Install virtualbox and vagrant
 
 https://www.youtube.com/watch?v=RhhF8Yh7OnE
 
@@ -8,9 +8,11 @@ https://www.youtube.com/watch?v=RhhF8Yh7OnE
 
 https://atlas.hashicorp.com/boxes/search
 
-### create and destroy vm - centos
+### Create and destroy vm - centos
 
 https://www.vagrantup.com/intro/getting-started/index.html
+
+https://www.youtube.com/watch?v=wPmvN7KcOlI
 
 ```
 $ mkdir vagrant
@@ -31,12 +33,3 @@ $ vagrant destroy
 > centos version
 
 $ hostnamectl 
-
-> run as root
-
-```
-[vagrant@localhost ~]$ su root
-Password: vagrant
-[root@localhost vagrant]#
-```
-
