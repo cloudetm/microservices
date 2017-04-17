@@ -19,18 +19,24 @@ Password:
 # yum-config-manager --enable docker-ce-edge
 ```
 
-> INSTALL DOCKER
+> Install Docker
 
 ```
 # yum makecache fast
 # yum install docker-ce
+```
+
+> Start Docker
+
+```
 # systemctl start docker
+```
+
+> Docker run
+
+```
 # docker run hello-world
-```
 
-> docker run
-
-```
 # docker run -it -v /john1 busybox
 / # ls
 bin    dev    etc    home   john1  proc   root   sys    tmp    usr    var

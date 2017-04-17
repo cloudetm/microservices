@@ -45,7 +45,8 @@ app.listen(port, function() {
   },
   "dependencies": {
     "express": "^4.13.3"
-  },  "author": "",
+  },
+  "author": "",
   "license": "ISC"
 }
 
@@ -72,7 +73,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 myservice           latest              28d78733908d        3 minutes ago       669MB
 ```
 
-> Run and Test Docker Container
+> docker run and test docker container
 
 ```
 # docker run -P -d myservice
@@ -83,4 +84,18 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 # curl http://localhost:32769
 {"msg":"helloworld"}
+```
+
+> Delete containers and images
+
+```
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Force delete all containers
+docker rm -f $(docker ps -a -q)
+
+# Delete all images
+docker rmi $(docker images -q)
+# Force delete all images
+docker rmi -f $(docker images -q)
 ```

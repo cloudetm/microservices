@@ -13,7 +13,7 @@ https://docs.docker.com/engine/reference/commandline/cli/
 > commands
 
 ```
-docker -v
+# docker -v
 
 # List all running containers
 docker ps
