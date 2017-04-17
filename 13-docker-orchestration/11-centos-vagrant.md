@@ -14,6 +14,8 @@ https://www.vagrantup.com/intro/getting-started/index.html
 
 https://www.youtube.com/watch?v=wPmvN7KcOlI
 
+> vagrant up
+
 ```
 $ mkdir vagrant
 $ cd vagrant/centos
@@ -27,9 +29,16 @@ $ less Vagrantfile
 $ vagrant up
 $ vagrant ssh # user=vagrant password=vagrant
 ~$ exit
+```
+
+> vagrant destroy
+
+```
 $ vagrant destroy
 ```
 
 > centos version
 
+```
 $ hostnamectl 
+```

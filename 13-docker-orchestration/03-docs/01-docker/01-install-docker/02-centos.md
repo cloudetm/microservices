@@ -1,4 +1,4 @@
-# Docker - centos
+# Centos - Install Docker
 
 https://docs.docker.com/engine/installation/linux/centos/
 
@@ -36,13 +36,4 @@ Password:
 
 ```
 # docker run hello-world
-
-# docker run -it -v /john1 busybox
-/ # ls
-bin    dev    etc    home   john1  proc   root   sys    tmp    usr    var
-/ # 
-ctrl-p-q  # keep in running
-# docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-busybox             latest              00f017a8c2a6        3 weeks ago         1.11 MB
 ```
