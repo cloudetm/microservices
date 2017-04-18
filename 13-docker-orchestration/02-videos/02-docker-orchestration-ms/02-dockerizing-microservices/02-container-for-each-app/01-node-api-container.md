@@ -14,26 +14,9 @@ ctrl+c, ctrl+c # exit
 
 ## Build node rest api docker image
 
-> Create server.js, package.json, Dockerfile
+> package.json
 
 ```
-# ls
-Dockerfile  package.json  server.js
-
-# cat server.js 
-var express = require('express');
-var app = express();
-
-app.get('/', function(req, res) {
-	res.json({'msg': 'helloworld'})
-});
-
-var port = process.env.port || 3000;
-app.listen(port, function() {
-	console.log('server started');
-});
-
-# cat package.json 
 {
   "name": "2-2",
   "version": "1.0.0",
@@ -49,11 +32,30 @@ app.listen(port, function() {
   "author": "",
   "license": "ISC"
 }
+```
 
-# cat Dockerfile 
+> server.js 
+
+```
+var express = require('express');
+var app = express();
+
+app.get('/', function(req, res) {
+	res.json({'msg': 'helloworld'})
+});
+
+var port = process.env.port || 3000;
+app.listen(port, function() {
+	console.log('server started');
+});
+```
+
+> Dockerfile
+ 
+```
 FROM node:latest
 
-RUN mkdir -p /user/src/app
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app

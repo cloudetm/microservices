@@ -18,4 +18,3 @@ $ vagrant ssh # user=vagrant password=vagrant
 $ su root
 Password: 
 ```
-
