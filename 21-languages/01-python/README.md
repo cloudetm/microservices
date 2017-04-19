@@ -33,8 +33,6 @@ python
 
 https://www.jetbrains.com/pycharm/docs/PyCharm_ReferenceCard_Mac.pdf
 
-
-
 ## Commands
 
 ### Running Code Interactively

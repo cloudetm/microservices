@@ -15,5 +15,6 @@ double click `postgres` to open PostgreSQL in terminal
 ```
 postgres=# create database shop;
 CREATE DATABASE
-postgres=#
+postgres-# \q
+$
 ```
