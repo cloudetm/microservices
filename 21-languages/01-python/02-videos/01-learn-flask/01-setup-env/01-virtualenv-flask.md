@@ -8,22 +8,21 @@
 $ sudo pip install virtualenv
 ```
 
-> Create project directory
+> Project directory
 
 ```
-$ mkdir learning-flask
-$ cd learning-flask/
+$ cd github/learning-flask/section-2/
 ```
 
 > activate venv
 
 ```
-learning-flask $ virtualenv venv
+$ virtualenv venv
 New python executable in venv/bin/python
 Installing setuptools, pip, wheel...done.
 
-learning-flask $ source venv/bin/activate
-(venv):learning-flask $ 
+$ source venv/bin/activate
+(venv): $ 
 ```
 
 ## Launch Flask web-api
@@ -31,28 +30,13 @@ learning-flask $ source venv/bin/activate
 > Install Flask - one time
 
 ```
-(venv):learning-flask $ pip install Flask
-```
-
-> hello.py
-
-```
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-if __name__ == '__main__':
-    app.run()
+(venv): $ pip install Flask
 ```
 
 > Run Flask Web-api
 
 ```
-(venv):learning-flask $ python hello.py
+(venv): $ python hello.py
 ctrl+c to exit
 ```
 
