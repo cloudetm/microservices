@@ -2,6 +2,34 @@
 
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
 
+> vagrant
+
+```
+$ cd vagrant/centos
+$ vagrant up
+$ vagrant ssh # user=vagrant password=vagrant
+```
+
+> run as root
+
+```
+$ su root
+Password: 
+```
+
+> Start Docker
+
+```
+# systemctl start docker
+```
+
+> Create a directory for the project:
+
+```
+$ mkdir dockerrun
+$ cd dockerrun
+```
+
 > package.json
 
 ```

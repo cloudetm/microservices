@@ -1,4 +1,4 @@
-# Flask Web API
+# Flask Web API - mac
 
 > activate venv
 
