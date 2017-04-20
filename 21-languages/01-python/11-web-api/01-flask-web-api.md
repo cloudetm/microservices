@@ -3,12 +3,12 @@
 > activate venv
 
 ```
-learning-flask $ virtualenv venv
+$ virtualenv venv
 New python executable in venv/bin/python
 Installing setuptools, pip, wheel...done.
 
-learning-flask $ source venv/bin/activate
-(venv):learning-flask $ 
+$ source venv/bin/activate
+(venv): $ 
 ```
 
 ## Launch Flask Web-api
@@ -37,10 +37,13 @@ if __name__ == '__main__':
 > Run Flask Web-api
 
 ```
-(venv):learning-flask $ python hello.py
+(venv): $ python hello.py
 ctrl+c to exit
 ```
 
-browser: http://localhost:5000/
+> Test
 
+```
+browser: http://localhost:5000/
 output: Hello World!
+```
