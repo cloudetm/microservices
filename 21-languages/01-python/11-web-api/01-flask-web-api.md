@@ -1,6 +1,6 @@
 # Flask Web API - mac
 
-> activate venv
+> activate virtualenv
 
 ```
 $ virtualenv venv
@@ -16,7 +16,7 @@ $ source venv/bin/activate
 > Install Flask - one time
 
 ```
-(venv):learning-flask $ pip install Flask
+(venv): $ pip install Flask
 ```
 
 > hello.py

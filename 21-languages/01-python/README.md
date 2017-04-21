@@ -3,11 +3,23 @@ python
 
 ## Installation
 
-> https://www.python.org/
+https://www.python.org/
 
-> `$ brew install python`
+```
+$ brew install python
+$ brew install python3
+```
 
-> `$ brew install python3`
+> activate virtualenv
+
+```
+$ virtualenv venv
+New python executable in venv/bin/python
+Installing setuptools, pip, wheel...done.
+
+$ source venv/bin/activate
+(venv): $ 
+```
 
 ### pip installation
 
