@@ -12,3 +12,10 @@ print(open('temp.txt').read())
 
 for line in open('temp.txt'):
     print(line)
+
+# hello text file
+# goodbye text file
+#
+# hello text file
+#
+# goodbye text file
