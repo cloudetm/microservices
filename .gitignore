@@ -16,7 +16,12 @@
 **/node_modules/
 **/out/
 **/logs/
+
+# python
 **/venv/
+**/bin/
+**/include/
+**/lib/
 
 # Java
 **/target/
