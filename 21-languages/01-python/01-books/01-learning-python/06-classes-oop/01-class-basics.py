@@ -30,6 +30,7 @@ z.display()  # Finds overridden method in SecondClass - Current value = "42"
 
 # class named attributes that Python will call automatically
 class ThirdClass(SecondClass):  # Inherit from SecondClass
+    # __init__() is class constructor or initialization method that calls when create a new instance of the class.
     def __init__(self, value):  # On "ThirdClass(value)"
         self.data = value
     def __add__(self, other):  # On "self + other"

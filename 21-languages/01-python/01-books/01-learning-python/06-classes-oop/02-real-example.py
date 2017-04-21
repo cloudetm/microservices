@@ -22,7 +22,7 @@ class Person:
         return self.name.split()[-1]  # self is implied subject
     def giveRaise(self, percent):
         self.pay = int(self.pay * (1 + percent))  # Must change here only
-if __name__ == '__main__':
+if __name__ == '__main__':  # When run for testing only
     # self-test code
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=10000)
@@ -44,7 +44,7 @@ class Person:  # Start a class
         self.pay = int(self.pay * (1 + percent))
     def __repr__(self):  # Added method
         return '[Person: %s, %s]' % (self.name, self.pay)  # String to print
-if __name__ == '__main__':
+if __name__ == '__main__':  # When run for testing only
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=10000)
     print(bob)  # [Person: Bob Smith, 0]
@@ -68,7 +68,7 @@ class Person:  # Start a class
 class Manager(Person):
     def giveRaise(self, percent, bonus=.10):  # Redefine to customize
         Person.giveRaise(self, percent + bonus)  # Call Person's version
-if __name__ == '__main__':
+if __name__ == '__main__':  # When run for testing only
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=10000)
     print(bob)
@@ -108,7 +108,7 @@ class Manager(Person):
         Person.__init__(self, name, 'mgr', pay)  # Run original with 'mgr'
     def giveRaise(self, percent, bonus=.10):
         Person.giveRaise(self, percent + bonus)
-if __name__ == '__main__':
+if __name__ == '__main__':  # When run for testing only
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=10000)
     print(bob)
@@ -142,7 +142,7 @@ class Manager(Person):  # BAD approach by using combine classes, subclass is bet
         return getattr(self.person, attr)  # Delegate all other attrs
     def __repr__(self):
         return str(self.person)  # Must overload again
-if __name__ == '__main__':
+if __name__ == '__main__':  # When run for testing only
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=10000)
     print(bob)
@@ -169,7 +169,7 @@ class Person:  # Start a class
         return '[Person: %s, %s]' % (self.name, self.pay)
 class Manager(Person):
     def __init__(self, name, pay):  # Redefine constructor
-        Person.__init__(self, name, 'mgr', pay)  # Run original with 'mgr'
+        Person.__init__(self, name, 'mgr', pay)  # Run original base-class with 'mgr'
     def giveRaise(self, percent, bonus=.10):
         Person.giveRaise(self, percent + bonus)
 class Department:
