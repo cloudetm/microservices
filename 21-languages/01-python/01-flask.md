@@ -1,4 +1,6 @@
-# Flask Web API - mac
+# flask
+
+http://flask.pocoo.org/
 
 > activate virtualenv
 
@@ -19,22 +21,21 @@ $ source venv/bin/activate
 (venv): $ pip install Flask
 ```
 
-> app.py
+> app.py - Flask is Fun
 
 ```
 from flask import Flask
-
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+@app.route("/")
+def hello():
+    return "Hello World!"
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
 ```
 
-> Run Flask Web-api
+> Run
 
 ```
 (venv): $ python app.py
