@@ -1,5 +1,7 @@
 # Using Flask-SQLAlchemy
 
+https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227638.html
+
 https://github.com/miguelgrinberg/oreilly-intro-to-flask-video/tree/master/5a
 
 > pip install
@@ -123,6 +125,35 @@ $ python app.py
 ```
 browser - go to http://127.0.0.1:5000/
 enter "Tom" and "Ken"
+```
+
+> python query
+
+```
+$ python
+Python 2.7.10 (default, Feb  6 2017, 23:53:20) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from app import db, User
+
+>>> User.query.all()
+[<User Tom>, <User Ken>]
+
+>>> User.query.filter(User.name.startswith('T')).all()
+[<User Tom>]
+
+>>> u = User(name='John')
+>>> u
+<User John>
+>>> db.session.add(u)
+>>> db.session.commit()
+>>> User.query.all()
+[<User Tom>, <User Ken>, <User John>]
+
+>>> db.session.delete(u)
+>>> db.session.commit()
+>>> User.query.all()
+[<User Tom>, <User Ken>]
 ```
 
 > Table - sqlite
