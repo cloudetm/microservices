@@ -23,9 +23,32 @@
 **/include/
 **/lib/
 
+**/*.egg
+**/*.egg-info
+**/dist/
+**/eggs/
+**/parts/
+**/var/
+**/sdist/
+**/develop-eggs/
+**/.installed.cfg
+**/lib64/
+**/__pycache__/
+
+**/pip-log.txt
+
+# Unit test / coverage reports
+**/.coverage
+**/.tox
+**/nosetests.xml
+
+# SQLite databases
+**/*.sqlite*
+
 # Java
 **/target/
 **/dependency-reduced-pom.xml
 
 # TestNG
 **/test-output/
+
