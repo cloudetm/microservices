@@ -18,3 +18,9 @@
 > select python interpreter
 
 - Python Interpreter, Use specified interpreter, select Python 2.7.10
+
+### Set virtualenv python project interpreter
+
+- PyCharm, Preferences..., 
+- Project: python, Project Interpreter
+- click `...` button, Add Local, select `~/.../venv/bin/python3`
