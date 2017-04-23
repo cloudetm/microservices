@@ -1,6 +1,15 @@
-# jinja2 template
+# jinja2 template - array
 
 > for loop iterate python array
+
+app.py
+
+```
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+              'August', 'September', 'October', 'November', 'December']
+```
+
+templates/index.html
 
 ```
     {% for month in months %}
