@@ -1,4 +1,4 @@
-# jinja2 template - array
+# jinja2 template - for statement
 
 > for loop iterate python array
 
