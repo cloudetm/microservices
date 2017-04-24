@@ -1,4 +1,5 @@
 from flask import Flask, render_template, flash, session, redirect, url_for
+from flask_bootstrap import Bootstrap
 from wtforms import TextAreaField
 from wtforms.validators import DataRequired
 from flask_wtf import FlaskForm
@@ -14,6 +15,7 @@ RECAPTCHA_PUBLIC_KEY = '6LeYIbsSAAAAACRPIllxA7wvXjIE411PfdB2gt2J'
 RECAPTCHA_PRIVATE_KEY = '6LeYIbsSAAAAAJezaIq3Ft_hSTo0YtyeFG-JgRtu'
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 app.config.from_object(__name__)
 
 
