@@ -1,4 +1,4 @@
-# jinja2 template - web forms
+# web forms
 
 https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227641.html
 
