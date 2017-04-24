@@ -1,6 +1,6 @@
-# jinja2 template - access dictionary
+# jinja2 template - if statement
 
-> access dictionary
+> if statement
 
 app.py
 
@@ -19,14 +19,20 @@ app.py
         'November': {'min': 41, 'max': 52, 'rain': 6.74},
         'December': {'min': 36, 'max': 45, 'rain': 6.94}
     }
+    highlight = {'min': 40, 'max': 80, 'rain': 5}
+    return render_template('index.html', city='Portland, OR', months=months,
+                           weather=weather, highlight=highlight)
 ```
 
 templates/index.html
 
 ```
-        <td>{{ weather[month]['min'] }}</td>
-        <td>{{ weather[month]['max'] }}</td>
-        <td>{{ weather[month]['rain'] }}</td>
+        <td>
+            {% set hl = weather[month]['min'] <= highlight['min'] %}
+            {% if hl %}<b>{% endif %}
+            {{ weather[month]['min'] }}
+            {% if hl %}</b>{% endif %}
+        </td>
 ```
 
 > activate virtualenv
