@@ -21,7 +21,7 @@ app.py
     }
 ```
 
-templates/index.html
+templates/index.html - <td>{{ weather[month]['min'] }}</td>
 
 ```
         <td>{{ weather[month]['min'] }}</td>

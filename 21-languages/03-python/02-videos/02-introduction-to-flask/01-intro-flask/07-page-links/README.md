@@ -1,24 +1,16 @@
-# jinja2 template - error pages
+# jinja2 template - page links
 
-> error pages
+> page links
 
-app.py
-
-```
-@app.errorhandler(404)
-def not_found(e):
-    return render_template('404.html')
-```
-
-templates/404.html
+templates/base.html - url_for('index')
 
 ```
-{% extends 'base.html' %}
-
-{% block title %}Not Found{% endblock %}
-
-{% block page_content %}
-<h1>Not Found</h1>
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Weather</a>
+        </div>
+    </nav>
 {% endblock %}
 ```
 
@@ -52,8 +44,10 @@ $ python app.py
 > Test
 
 ```
-http://127.0.0.1:5000/foo
+1, http://127.0.0.1:5000/foo
 
 Weather
 Not Found
+
+2, click "Return to home page" link
 ```

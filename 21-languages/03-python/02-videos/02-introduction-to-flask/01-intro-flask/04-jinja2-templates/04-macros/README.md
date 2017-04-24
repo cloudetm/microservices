@@ -2,7 +2,7 @@
 
 > macros
 
-templates/index.html
+templates/index.html - {% import 'macros.html' as macros %}
 
 ```
 {% import 'macros.html' as macros %}

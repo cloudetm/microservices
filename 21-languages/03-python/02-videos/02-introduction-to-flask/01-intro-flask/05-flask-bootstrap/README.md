@@ -1,6 +1,6 @@
 # jinja2 template - flask-bootstrap
 
-> macros
+> flask bootstrap
 
 app.py
 

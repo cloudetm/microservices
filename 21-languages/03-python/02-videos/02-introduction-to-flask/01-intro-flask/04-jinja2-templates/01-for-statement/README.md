@@ -9,7 +9,7 @@ app.py
               'August', 'September', 'October', 'November', 'December']
 ```
 
-templates/index.html
+templates/index.html - {% for month in months %}
 
 ```
     {% for month in months %}

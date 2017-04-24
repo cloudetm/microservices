@@ -24,7 +24,7 @@ app.py
                            weather=weather, highlight=highlight)
 ```
 
-templates/index.html
+templates/index.html - {% if hl %}<b>{% endif %}
 
 ```
         <td>
