@@ -1,5 +1,7 @@
 # jinja2 template - flask-bootstrap
 
+https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227636.html
+
 > flask bootstrap
 
 app.py

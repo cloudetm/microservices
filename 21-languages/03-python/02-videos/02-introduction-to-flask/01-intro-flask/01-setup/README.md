@@ -1,5 +1,7 @@
 # Setup
 
+https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227640.html
+
 ## mac
 
 > install python

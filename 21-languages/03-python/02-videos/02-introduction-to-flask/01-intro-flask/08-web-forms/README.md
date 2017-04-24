@@ -1,8 +1,14 @@
 # jinja2 template - web forms
 
+https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227641.html
+
 > web forms
 
-app.py - @app.route('/', methods=['GET', 'POST'])
+*app.py*
+
+1, from flask import request
+
+2, @app.route('/', methods=['GET', 'POST'])
 
 ```
 from flask import Flask, render_template, request
