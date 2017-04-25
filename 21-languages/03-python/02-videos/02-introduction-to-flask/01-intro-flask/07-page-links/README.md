@@ -1,4 +1,4 @@
-# jinja2 template - page links
+# page links
 
 https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227627.html
 

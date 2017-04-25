@@ -1,39 +1,6 @@
-# jinja2 template - flask_wtf
+# contexts session
 
-https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227641.html
-
-## examples
-
-https://github.com/lepture/flask-wtf/tree/master/examples
-
-> flask forms
-
-app.py
-
-```
-from flask_wtf import FlaskForm
-```
-
-index.html - <form method="POST" action="{{ url_for('add_comment') }}">
-
-```
-        <form method="POST" action="{{ url_for('add_comment') }}">
-            {{ form.csrf_token }}
-            <p>
-                {{ form.comment.label }}<br>
-                {{ form.comment(rows=5, cols=40) }}
-            </p>
-            <p>
-                {% for error in form.recaptcha.errors %}
-                    {{ error }}
-                {% endfor %}
-                {{ form.recaptcha }}
-            </p>
-            <p>
-                <input type="submit" value="Add comment">
-            </p>
-        </form>
-```
+https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227635.html
 
 > activate virtualenv
 
@@ -66,7 +33,6 @@ $ python app.py
 
 ```
 1, http://127.0.0.1:5000
-2, type Comment
-3, check "I'm not a robot"
-4, click "Add comment"
+
+2, hit refresh button
 ```

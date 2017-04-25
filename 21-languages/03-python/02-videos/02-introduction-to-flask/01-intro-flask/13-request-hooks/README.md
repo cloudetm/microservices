@@ -1,4 +1,4 @@
-# flask_wtf
+# jinja2 template - flask_wtf
 
 https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227641.html
 
