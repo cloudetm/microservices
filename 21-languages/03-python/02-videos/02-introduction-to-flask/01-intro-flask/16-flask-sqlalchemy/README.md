@@ -35,13 +35,20 @@ WTForms==2.1
 
 > app.py
 
+1, from flask_sqlalchemy import SQLAlchemy
+
+2, db = SQLAlchemy(app)
+
+3, db.create_all()
+
 ```
 from flask import Flask, render_template
-from flask.ext.bootstrap import Bootstrap
-from flask.ext.wtf import Form
+from flask_bootstrap import Bootstrap
 from wtforms import StringField, SubmitField
-from wtforms.validators import Required, Length
-from flask.ext.sqlalchemy import SQLAlchemy
+from wtforms.validators import DataRequired, Length
+from flask_wtf import FlaskForm
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
@@ -49,9 +56,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.sqlite3'
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 
-class NameForm(Form):
-    name = StringField('What is your name?', validators=[Required(),
-                                                         Length(1, 16)])
+
+class NameForm(FlaskForm):
+
+    name = StringField("What is your name?", validators=[DataRequired(), Length(1, 16)])
     submit = SubmitField('Submit')
 
 class User(db.Model):
@@ -73,10 +81,11 @@ def index():
         if User.query.filter_by(name=name).first() is None:
             db.session.add(User(name=name))
             db.session.commit()
-            new = True
+            new=True
     return render_template('index.html', form=form, name=name, new=new)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     db.create_all()
     app.run(debug=True)
 ```
@@ -90,29 +99,29 @@ if __name__ == '__main__':
 {% block title %}Relational Database Example{% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">Hello</a>
-        </div>
-    </nav>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Hello</a>
+    </div>
+</nav>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                {{ wtf.quick_form(form) }}
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {{ wtf.quick_form(form) }}
         </div>
-        {% if name %}
-            <h1>Hello, {{ name }}!</h1>
-            {% if new %}
-                <p>Pleased to meet you!</p>
-            {% else %}
-                <p>Happy to see you again!</p>
-            {% endif %}
-        {% endif %}
     </div>
+    {% if name %}
+    <h1>Hello, {{ name }}!</h1>
+    {% if new %}
+    <p>Pleased to meet you!</p>
+    {% else %}
+    <p>Happy to see you again!</p>
+    {% endif %}
+    {% endif %}
+</div>
 {% endblock %}
 ```
 
