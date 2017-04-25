@@ -4,11 +4,13 @@ https://www.safaribooksonline.com/library/view/learning-path-introduction/978149
 
 https://github.com/miguelgrinberg/oreilly-intro-to-flask-video/tree/master/5a
 
-> pip install
+> pip installation
 
 ```
-# pip install flask-bootstrap
-# pip install flask-wtf
+$ pip install flask
+$ pip install flask-bootstrap
+$ pip install flask-wtf
+$ pip install flask-sqlalchemy
 ```
 
 > requirements

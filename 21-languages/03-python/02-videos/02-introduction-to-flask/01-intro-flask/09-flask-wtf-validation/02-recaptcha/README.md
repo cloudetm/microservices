@@ -1,4 +1,4 @@
-# flask_wtf
+# flask_wtf - recaptcha
 
 https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227641.html
 
@@ -11,7 +11,7 @@ https://github.com/lepture/flask-wtf/tree/master/examples
 app.py
 
 ```
-from flask_wtf import FlaskForm
+from flask_wtf.recaptcha import RecaptchaField
 ```
 
 index.html - <form method="POST" action="{{ url_for('add_comment') }}">
