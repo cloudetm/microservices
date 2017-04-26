@@ -1,4 +1,6 @@
-# ubuntu python installation
+# install python
+
+> ubuntu 
 
 http://roundhere.net/journal/virtualenv-ubuntu-12-10/
 
