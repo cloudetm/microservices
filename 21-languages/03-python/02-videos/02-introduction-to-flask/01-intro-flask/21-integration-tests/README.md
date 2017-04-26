@@ -1,4 +1,4 @@
-# Unit Tests & Code Coverage
+# Integration Tests
 
 https://www.safaribooksonline.com/library/view/learning-path-introduction/9781491958018/video227642.html
 
