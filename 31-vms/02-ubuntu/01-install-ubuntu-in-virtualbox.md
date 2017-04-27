@@ -1,4 +1,4 @@
-# install ubuntu in virtualbox
+# Install ubuntu in virtualbox
 
 ## Download and Install VirtualBox
 
@@ -20,7 +20,7 @@ https://www.ubuntu.com/download/desktop
 
 http://www.simplehelp.net/2015/06/09/how-to-install-ubuntu-on-your-mac/
 
-## change resolution
+## Change resolution
 
 https://www.youtube.com/watch?v=t36wXUu1UtQ
 

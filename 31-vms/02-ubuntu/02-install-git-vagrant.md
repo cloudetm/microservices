@@ -10,8 +10,6 @@
 
 > `apt install git`
 
-﻿$ sudo -i
-
 ## Install vagrant
 
 https://www.godaddy.com/garage/tech/config/install-vagrant-ubuntu-14-04/
@@ -19,5 +17,4 @@ https://www.godaddy.com/garage/tech/config/install-vagrant-ubuntu-14-04/
 ```
 apt-get install virtualbox
 apt-get install vagrant
-
 ```
