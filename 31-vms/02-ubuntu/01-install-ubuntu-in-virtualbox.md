@@ -1,22 +1,19 @@
 # Install ubuntu in virtualbox
 
+
 ## Download and Install VirtualBox
 
 https://www.virtualbox.org/wiki/Downloads
 
-## Download ubuntu image
-
-http://www.osboxes.org/ubuntu/
-
-> files location
-
-`~/Documents/vms/`
-
-password: osboxes.org
-
 ## Download and Install ubuntu
 
+> Download ubuntu
+
 https://www.ubuntu.com/download/desktop
+
+save it at Documents/vms
+
+> Install ubuntu
 
 http://www.simplehelp.net/2015/06/09/how-to-install-ubuntu-on-your-mac/
 
@@ -33,3 +30,16 @@ Devices, Shared Clipboard, Bidirectional
 ## Version
 
 lsb_release -a
+
+
+
+## Download ubuntu image
+
+http://www.osboxes.org/ubuntu/
+
+> files location
+
+`~/Documents/vms/`
+
+password: osboxes.org
+

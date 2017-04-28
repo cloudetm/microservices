@@ -15,7 +15,6 @@ Password: vagrant
 
 # yum install nano -y
 
-
 > Install Wget
 
 ```
