@@ -4,7 +4,24 @@ https://www.safaribooksonline.com/library/view/the-linux-command/9781593273897/
 
 note: commands are running on Ubuntu
 
-> root - ubuntu
+## centos
+
+```
+$ cd vagrant/centos
+$ vagrant up
+$ vagrant ssh # user=vagrant password=vagrant
+```
+
+> run as root
+
+```
+[vagrant@localhost ~]$ su root
+Password: vagrant
+```
+
+## ubuntu
+
+> run as root
 
 ```
 $ sudo -i
