@@ -1,6 +1,65 @@
-# Change file permissions
+# Reading, Writing, and Executing
 
-## Files
+**Permission Meanings**
+
+| Permission | File                                                     | Directory                                                           |
+|------------|----------------------------------------------------------|---------------------------------------------------------------------|
+| r | View the contents of the file. <br>Required for cat, head, less.  | View the contents of the directory. <br>Required for ls.            |
+| w | Change the contents of the file. <br>Required for nano, vi.       | Add and remove files in the directory. <br>Required for touch rm.   |
+| x | Run the file as a command. <br>Required for binaries and scripts. | Access the contents of the directory. Required for cd, ls -l, find. |
+
+
+`-rw-r--r--. 1 root root 83 Dec 11 2013 /etc/hosts`: Long Listing Fields for `ls -l newfile`
+
+- first `-`: File Type `-` ordinary file, `d` directory
+
+- next three `rw-`: Owner permissions
+
+- next three `r--`: Group permissions
+
+- next three `r--`: Other permissions
+
+- next special character `.`: Advanced
+
+- next integer `1`: Link Count - hard links
+
+- first `root`: Owner
+
+- second `root`: Group
+
+- `83`: Size
+
+- `Dec 11 2013`: Last Change Date
+
+- `/etc/hosts`: Name
+
+> chmod - Change File Mode
+
+Use `chmod` to change the mode (permissions) of a file or directory
+
+## SYMBOLIC REPRESENTATION
+
+> `chmod` Symbolic Notation
+
+| Symbol | Meaning                                              |
+|--------|------------------------------------------------------|
+| u      | Short for user but means the file or directory owner |
+| g      | Group owner                                          |
+| o      | Short for others but means world                     |
+| a      | Short for all, the combination of u, g, and o        |
+
+> Examples
+
+| Symbol    | Meaning                                                                                       |
+|-----------|-----------------------------------------------------------------------------------------------|
+| u+x       | Add execute permission for the owner                                                          |
+| u-x       | Remove execute permission from the owner                                                      |
+| +x        | Add execute permission for the owner                                                          |
+| o-rw      | Remove read and write permission from anyone besides owner and group owner                    |
+| go=rw     | Set group owner and anyone besides owner to have read and write permission                    |
+| u+x,go=rx | Add execute permission for owner and set permissions for group and others to read and execute |
+
+> Files
 
 ```
 [osboxes@osboxes lesson6]$ man chmod
@@ -21,7 +80,7 @@
 -rw-rw-r--. 1 osboxes osboxes 0 Nov 30 03:06 newfile
 ```
 
-## Directories
+> Directories
 
 **setup**
 
