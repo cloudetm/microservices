@@ -23,7 +23,7 @@ Password:
 
 ```
 # yum makecache fast
-# yum install docker-ce
+# yum install -y docker-ce
 ```
 
 > Start Docker
@@ -32,8 +32,16 @@ Password:
 # systemctl start docker
 ```
 
-> Docker run
+> Docker run nginx
+
+https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-14-04
 
 ```
-# docker run hello-world
+# docker run --name docker-nginx -p 80:80 -d nginx
+```
+
+> Test - from vagrant centos vm
+
+```
+# curl http://localhost
 ```
