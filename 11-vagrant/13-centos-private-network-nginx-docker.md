@@ -1,4 +1,4 @@
-# Docker - centos nginx on Mac (host)
+# vagrant private_network - centos nginx on docker
 
 https://docs.docker.com/engine/installation/linux/centos/
 
@@ -6,22 +6,31 @@ https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-co
 
 ## vagrant
 
-> `Vagrantfile` - port forwarding changes
+> create Vagrantfile
 
-https://www.vagrantup.com/docs/networking/basic_usage.html
+```
+$ mkdir centos
+$ cd centos
+
+$ vagrant init centos/7
+```
+
+> add `private_network` to Vagrantfile
+
+1, open `Vagrantfile` under `vagrant` folder
+
+2, uncomment following line and change the ip to "55.55.55.5"
 
 ```
 Vagrant.configure("2") do |config|
   # ...
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "private_network", ip: "55.55.55.5"
 end
 ```
 
 > vagrant up and ssh
 
 ```
-$ cd vagrant/centos
-
 $ vagrant up
 $ vagrant ssh # user=vagrant password=vagrant
 ```
@@ -33,7 +42,7 @@ $ su root
 Password: 
 ```
 
-## Install using the repository
+## Install Docker using the repository
 
 > Set up the repository - docker ce
 
@@ -47,7 +56,7 @@ Password:
 
 ```
 # yum makecache fast
-# yum install docker-ce
+# yum install -y docker-ce
 ```
 
 > Start Docker
@@ -60,31 +69,33 @@ Password:
 
 https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-14-04
 
+forwarded-port docker port 80 to centos host port 80
+
 ```
 # docker run --name docker-nginx -p 80:80 -d nginx
 ```
 
 > Testing
 
-Because of port forwarding
+Because of private_network below
 
 ```
 Vagrant.configure("2") do |config|
   # ...
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "private_network", ip: "55.55.55.5"
 end
 ```
 
 *Test from vagrant centos vm*
 
 ```
-# curl http://localhost
+# curl http://55.55.55.5/
 ```
 
 *Test from Mac (host)*
 
 ```
-http://localhost:8080/
+http://55.55.55.5/
 ```
 
 > List docker images

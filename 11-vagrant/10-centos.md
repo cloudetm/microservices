@@ -35,6 +35,6 @@ $ hostnamectl
 > run as root
 
 ```
-[vagrant@localhost ~]$ su root
+$ su root
 Password: vagrant
 ```

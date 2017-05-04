@@ -1,10 +1,19 @@
-# Docker - centos nginx on Mac (host)
+# vagrant forwarded_port - centos nginx on docker
 
 https://docs.docker.com/engine/installation/linux/centos/
 
 https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-14-04
 
 ## vagrant
+
+> create Vagrantfile
+
+```
+$ mkdir centos
+$ cd centos
+
+$ vagrant init centos/7
+```
 
 > `Vagrantfile` - port forwarding changes
 
@@ -20,8 +29,6 @@ end
 > vagrant up and ssh
 
 ```
-$ cd vagrant/centos
-
 $ vagrant up
 $ vagrant ssh # user=vagrant password=vagrant
 ```
@@ -33,7 +40,7 @@ $ su root
 Password: 
 ```
 
-## Install using the repository
+## Install Docker using the repository
 
 > Set up the repository - docker ce
 
@@ -47,7 +54,7 @@ Password:
 
 ```
 # yum makecache fast
-# yum install docker-ce
+# yum install -y docker-ce
 ```
 
 > Start Docker
@@ -59,6 +66,8 @@ Password:
 > Docker run nginx
 
 https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-14-04
+
+forwarded-port docker port 80 to centos host port 80
 
 ```
 # docker run --name docker-nginx -p 80:80 -d nginx

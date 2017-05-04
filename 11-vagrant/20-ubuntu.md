@@ -33,7 +33,7 @@ $ lsb_release -a # version
 
 > run as root
 
-$ sudo -i # run as root
+$ sudo -i
 
 ### ubuntu command
 
