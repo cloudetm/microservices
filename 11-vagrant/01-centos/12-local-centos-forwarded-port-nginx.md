@@ -31,7 +31,7 @@ $ vagrant ssh # user=vagrant password=vagrant
 
 ```
 $ su root
-Password: 
+Password: vagrant
 ```
 
 > install nginx
