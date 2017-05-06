@@ -6,9 +6,20 @@ https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-co
 
 ## vagrant
 
+> create Vagrantfile
+
+```
+$ mkdir ubuntu
+$ cd ubuntu
+
+$ vagrant init ubuntu/xenial64
+```
+
 > `Vagrantfile` - port forwarding changes
 
 https://www.vagrantup.com/docs/networking/basic_usage.html
+
+`host` is Mac
 
 ```
 Vagrant.configure("2") do |config|
