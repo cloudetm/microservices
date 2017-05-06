@@ -33,7 +33,7 @@ $ su root
 Password: 
 ```
 
-## Install using the repository
+## Install docker using the repository
 
 > Set up the repository - docker ce
 
