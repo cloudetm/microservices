@@ -47,6 +47,8 @@ Password: vagrant
 > setup.sh - `bash setup.sh`
 
 ```
+#!/usr/bin/env bash
+
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum-config-manager --enable docker-ce-edge
@@ -60,7 +62,7 @@ chmod +x /usr/local/bin/docker-compose
 systemctl start docker
 
 mkdir dockercompose
-cd dockercompose
+cd dockercompose # cd does not work here
 ```
 
 > Set up the repository - docker ce

@@ -2,8 +2,12 @@
 
 http://www.linuxcommand.org/
 
-> execute script
+> execute script in terminal
 
 ```
 bash foo.sh
 ```
+
+## ide
+
+- Intellij IDEA

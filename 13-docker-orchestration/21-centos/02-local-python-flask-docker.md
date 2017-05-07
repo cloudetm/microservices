@@ -40,6 +40,21 @@ Password: vagrant
 
 ## Docker
 
+> setup.sh - `bash setup.sh`
+
+```
+#!/usr/bin/env bash
+
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --enable docker-ce-edge
+
+yum makecache fast
+yum install -y docker-ce
+
+systemctl start docker
+```
+
 > Set up the repository - docker ce
 
 ```
