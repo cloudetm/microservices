@@ -2,6 +2,12 @@
 
 https://www.safaribooksonline.com/library/view/bash-scripting-fundamentals/9780134541730/
 
+> execute script
+
+```
+bash foo.sh
+```
+
 ## Using Conditional Statements
 
 http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html

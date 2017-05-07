@@ -11,11 +11,13 @@ $ cd centos
 $ vagrant init centos/7
 ```
 
-> `Vagrantfile` - port forwarding changes
+> `Vagrantfile` - port forwarding changes 
 
 https://www.vagrantup.com/docs/networking/basic_usage.html
 
 `host` is Mac
+
+`guest` is centos
 
 ```
 Vagrant.configure("2") do |config|
@@ -109,7 +111,7 @@ python              3.4-alpine          9ac5db25a0ca        6 weeks ago         
 > Run docker container
 
 ```
-                host:conatiner
+              host:conatiner
 # docker run -p 80:5000 -d myservice
 
 # docker ps
@@ -146,9 +148,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-```
-http://localhost:8080/
-```
+go to http://localhost:8080/
 
 ## Clean up
 

@@ -1,9 +1,34 @@
-# python api - Docker run
+# python flask api - centos docker-compose 
 
-> vagrant
+## vagrant
+
+> create Vagrantfile
 
 ```
-$ cd vagrant/centos
+$ mkdir centos
+$ cd centos
+
+$ vagrant init centos/7
+```
+
+> `Vagrantfile` - port forwarding changes 
+
+https://www.vagrantup.com/docs/networking/basic_usage.html
+
+`host` is Mac
+
+`guest` is centos
+
+```
+Vagrant.configure("2") do |config|
+  # ...
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+end
+```
+
+> vagrant up and ssh
+
+```
 $ vagrant up
 $ vagrant ssh # user=vagrant password=vagrant
 ```
@@ -12,7 +37,31 @@ $ vagrant ssh # user=vagrant password=vagrant
 
 ```
 $ su root
-Password: 
+Password: vagrant
+```
+
+## Docker
+
+> Set up the repository - docker ce
+
+```
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --enable docker-ce-edge
+```
+
+> Install Docker
+
+```
+yum makecache fast
+yum install -y docker-ce
+```
+
+> Install docker-compose
+
+```
+curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 ```
 
 > Start Docker
@@ -24,8 +73,8 @@ Password:
 > Create a directory for the project:
 
 ```
-$ mkdir dockerrun
-$ cd dockerrun
+$ mkdir dockercompose
+$ cd dockercompose
 ```
 
 > app.py
@@ -37,7 +86,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Hello World from flask!'
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
@@ -47,7 +96,6 @@ if __name__ == '__main__':
 
 ```
 flask
-redis
 ```
 
 > Dockerfile
@@ -68,12 +116,15 @@ services:
   web:
     build: .
     ports:
-     - "5000:5000"
+     - "80:5000"
     volumes:
      - .:/code
   redis:
     image: "redis:alpine"
 ```
+    ports:
+     - "80:5000"
+      host:container
 
 > docker-compose up
 
@@ -81,17 +132,34 @@ services:
 # docker-compose up -d
 
 # docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-e8ebff4febca        redis:alpine        "docker-entrypoint..."   8 seconds ago       Up 6 seconds        6379/tcp                 composetest_redis_1
-297121b42d99        composetest_web     "python app.py"          8 seconds ago       Up 6 seconds        0.0.0.0:5000->5000/tcp   composetest_web_1
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+ad9a1f1dacd7        redis:alpine        "docker-entrypoint..."   7 minutes ago       Up 7 minutes        6379/tcp               dockercompose_redis_1
+476d3ae212a0        dockercompose_web   "python app.py"          7 minutes ago       Up 7 minutes        0.0.0.0:80->5000/tcp   dockercompose_web_1
 ```
 
-> Test
+## Test
+
+> Test from centos
 
 ```
-# curl http://0.0.0.0:5000/
-Hello World! I have been seen 1 times.
+# curl http://0.0.0.0:80
+or
+# curl http://localhost:80
+Hello World from python flask!
 ```
+
+> Test from Mac
+
+because of Vagrantfile port forwarding
+
+```
+Vagrant.configure("2") do |config|
+  # ...
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+end
+```
+
+go to http://localhost:8080/
 
 > Delete containers and images
 

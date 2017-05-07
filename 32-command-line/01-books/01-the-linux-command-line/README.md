@@ -2,8 +2,6 @@
 
 https://www.safaribooksonline.com/library/view/the-linux-command/9781593273897/
 
-note: commands are running on Ubuntu
-
 ## centos
 
 ```
