@@ -1,4 +1,4 @@
-# Texting Processing
+# Text Processing
 
 - cat—Concatenate files and print on the standard output.
 - sort—Sort lines of text files.
