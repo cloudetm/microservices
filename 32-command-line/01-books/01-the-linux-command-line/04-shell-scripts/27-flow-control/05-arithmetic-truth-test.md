@@ -18,7 +18,7 @@ $ if ((0)); then echo "It is true."; fi
 ```
 #!/bin/bash
 
-# test-integer2: evaluate the value of an integer
+# test-integer: evaluate the value of an integer
 
 INT=-5
 
