@@ -13,6 +13,7 @@ bzip
 zipnote
 bzip2
 gzip
+
 $ cat foo2.txt
 czip
 gzip3
