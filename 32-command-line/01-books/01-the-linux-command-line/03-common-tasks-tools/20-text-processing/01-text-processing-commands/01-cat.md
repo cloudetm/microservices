@@ -2,12 +2,12 @@
 
 > `-A` - display non-printing characters in the text.
 
-a leading `cat` character and follow the line. `enter` and ctrl-D to end.
+a leading `cat` character and follow the line. `enter` and `ctrl-D` to end.
 
 ```
 $ cat > foo.txt
 	The quick brown fox jumped over the lazy dog.
-[vagrant@localhost ~]$ cat -A foo.txt
+$ cat -A foo.txt
 ^IThe quick brown fox jumped over the lazy dog.$
 ```
 
@@ -25,7 +25,7 @@ The quick brown fox
 
 
 jumed over the lazy dog.
-[vagrant@localhost ~]$ cat -ns foo.txt
+$ cat -ns foo.txt
      1	The quick brown fox
      2	
      3	jumed over the lazy dog.
