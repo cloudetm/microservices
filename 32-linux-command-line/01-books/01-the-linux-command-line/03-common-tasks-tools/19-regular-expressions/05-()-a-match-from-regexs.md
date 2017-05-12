@@ -29,6 +29,8 @@ AAA
 
 ## Combine alternation with regular-expression
 
+use `()` to separate the alternation
+
 > Setup - foo1.txt and foo2.txt
 
 ```
