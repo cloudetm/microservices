@@ -34,12 +34,16 @@ one for each directory. By including sort in the pipeline, we changed the data t
 ﻿# ls /bin /usr/bin | sort | uniq -d | less
 ```
 
-> wc - Print Line, Word, and Byte Counts
+### wc - Print Line, Word, and Byte Counts
 
 ```
+$ wc --help
+
 ﻿# wc ls-output.txt 
  1  9 56 ls-output.txt
 ```
+
+> `-l` - print the newline counts
 
 the number of items in sorted unique list
 
@@ -48,7 +52,14 @@ the number of items in sorted unique list
 1899
 ```
 
-> grep - Print Lines Matching a Pattern
+> `-c` - print the word counts
+
+```
+$ echo Tom Dick Harry | wc -w
+3
+```
+
+### grep - Print Lines Matching a Pattern
 
 grep is a powerful program used to find text patterns within files
 
@@ -56,7 +67,7 @@ grep is a powerful program used to find text patterns within files
 grep pattern [file...]
 ```
 
-find all the files in the sorted unique list of programs that have the word `zip` in the name
+> find all the files in the sorted unique list of programs that have the word `zip` in the name
 
 ```
 ﻿# ls /bin /usr/bin | sort | uniq | grep zip
@@ -84,7 +95,7 @@ zipsplit
 
 > head/tail - Print First/Last Part of Files
 
-print the first 5 lines and last 5 lines
+`head` prints the first 5 lines
 
 ```
 ﻿# head -n 5 ls-output.txt 
@@ -93,8 +104,12 @@ total 235876
 lrwxrwxrwx 1 root root           8 Apr 14 17:14 2to3 -> 2to3-2.7
 -rwxr-xr-x 1 root root          96 Nov 19 01:32 2to3-2.7
 -rwxr-xr-x 1 root root          96 Nov 17 11:20 2to3-3.5
+```
 
-root@william-VirtualBox:~# tail -n 5 ls-output.txt 
+`tail` prints the last 5 lines
+
+```
+# tail -n 5 ls-output.txt 
 -rwxr-xr-x 1 root root      162688 Nov 20  2015 zipinfo
 -rwxr-xr-x 1 root root       81840 Aug 16  2015 zipnote
 -rwxr-xr-x 1 root root       81840 Aug 16  2015 zipsplit

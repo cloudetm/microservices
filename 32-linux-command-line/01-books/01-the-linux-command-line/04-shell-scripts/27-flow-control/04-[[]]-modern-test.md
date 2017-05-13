@@ -1,6 +1,8 @@
 # Modern Version of test
 
-> Compound command
+https://www.safaribooksonline.com/library/view/the-linux-command/9781593273897/ch27s04.html
+
+> Compound command is an enhanced replacement for `test`
 
 ```
 [[ expression ]]
@@ -13,7 +15,9 @@
 string1 =~ regex
 ```
 
-## Example
+it returns true if string1 is matched by the extended regex
+
+## Example - verify constant contains an integer
 
 > foo.sh
 
@@ -44,6 +48,14 @@ else
   exit 1
 fi
 ```
+
+*regex - `^-?[0-9]+$`*
+
+- `^` - begin with
+- `-?` - optional `-` because it could be negative
+- `[0-9]` - any character from 0 to 9 range
+- `+` - match one or more
+- `$` - the end of line
 
 > Test
 
