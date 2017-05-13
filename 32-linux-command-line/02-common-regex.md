@@ -30,5 +30,4 @@ fi
 ```
 $ bash foo.sh 
 pass
-
 ```
