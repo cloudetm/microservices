@@ -1,4 +1,6 @@
-# Common Commands
+# rm
+
+remove files or directories
 
 > delete all files in current directory
 
