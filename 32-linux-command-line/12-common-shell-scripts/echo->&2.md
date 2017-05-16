@@ -1,4 +1,8 @@
-# echo >&2
+# echo >&2 - Standard error
+
+Send the messages to standard error to separate them from normal output
+
+## reference
 
 http://stackoverflow.com/questions/23489934/echo-2-some-text-what-does-it-mean-in-shell-scripting
 
