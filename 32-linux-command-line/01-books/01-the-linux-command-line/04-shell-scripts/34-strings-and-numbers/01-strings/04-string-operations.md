@@ -65,6 +65,14 @@ $ echo ${foo##*.}
 zip
 ```
 
+> Test - remove leading zeros
+
+```
+$ i=01
+$ echo ${i/#0} # remove leading zero
+1
+```
+
 ## Remove text from the end of the string
 
 Remove text from the end of the string contained in parameter
