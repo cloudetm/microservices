@@ -27,4 +27,3 @@ Password: vagrant
 `CTRL + ALT + T` to open terminal
 $ sudo -i
 ```
-
