@@ -16,11 +16,17 @@ save it at Documents/vms
 
 http://www.simplehelp.net/2015/06/09/how-to-install-ubuntu-on-your-mac/
 
+Memory Size = 4096
+Hard disk = 40GB
+
 ## Change resolution
 
 https://www.youtube.com/watch?v=t36wXUu1UtQ
 
 Launch ubuntu, click "Devices", "Insert Guest Additions CD image"
+
+I8u4!qaz
+reboot in terminal
 
 ## Clipboard
 

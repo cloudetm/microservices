@@ -13,13 +13,15 @@ Password: vagrant
 
 > nano - installation
 
+```
 # yum install nano -y
+```
 
 > Install Wget
 
 ```
 [root@localhost ~]# yum -y update
-[root@localhost ~]# yum install wget
+[root@localhost ~]# yum install wget -y
 ```
 
 ## Install VirtualBox
@@ -32,10 +34,12 @@ https://tecadmin.net/install-oracle-virtualbox-on-centos-redhat-and-fedora/
 # cd /etc/yum.repos.d/
 # wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
 # rpm -Uvh http://epel.mirror.net.in/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
-# yum install gcc make patch  dkms qt libgomp
-# yum install kernel-headers kernel-devel fontforge binutils glibc-headers glibc-devel
+# yum install gcc make patch  dkms qt libgomp -y
+# yum install kernel-headers kernel-devel fontforge binutils glibc-headers glibc-devel -y
 # export KERN_DIR=/usr/src/kernels/2.6.32-504.3.3.el6.x86_64
-# yum install VirtualBox-5.1
+# yum install VirtualBox-5.1 -y
+
+# vboxmanage --version
 ```
 
 > Rebuild kernel modules

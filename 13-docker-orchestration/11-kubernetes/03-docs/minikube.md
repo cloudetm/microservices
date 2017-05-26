@@ -10,9 +10,17 @@ https://github.com/kubernetes/minikube
 brew cask install minikube
 ```
 
+*Linux*
+
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
+
 > Quickstart
 
 ```
+minikube delete # optional - delete the old vm
+
 minikube start
 
 kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
