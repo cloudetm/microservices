@@ -31,13 +31,17 @@ Either a DVD drive or a USB port for the installer media
 Internet access is helpful
 ```
 
+> Open terminal
+
+`ctrl+alt+t`
+
 ## Change resolution
 
 https://www.youtube.com/watch?v=t36wXUu1UtQ
 
 Launch ubuntu, click "Devices", "Insert Guest Additions CD image"
 
-reboot in terminal
+enter `reboot` in terminal
 
 ## Clipboard
 
