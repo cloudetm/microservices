@@ -35,6 +35,10 @@ Internet access is helpful
 
 `ctrl+alt+t`
 
+> Lock Screen - turn off
+
+`Settings`, `Brightness & Lock`, `Lock` OFF
+
 ## Change resolution
 
 https://www.youtube.com/watch?v=t36wXUu1UtQ
