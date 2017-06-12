@@ -121,8 +121,8 @@ e73c373 I remembered the change
 f4dafab what is git
 3b05fae a second commit to the readme file
 cb9ef0b initial commit with readme.md file
-LMDV-WHAN:git_lesson whan$ git checkout HEAD~1 README.md 
-LMDV-WHAN:git_lesson whan$ git status
+$ git checkout HEAD~1 README.md 
+$ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
@@ -139,7 +139,7 @@ Git is a version control system that prevents us from having the "final doc" pro
 $ git reset 09fed8e README.md 
 Unstaged changes after reset:
 M	README.md
-LMDV-WHAN:git_lesson whan$ git status
+$ git status
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
