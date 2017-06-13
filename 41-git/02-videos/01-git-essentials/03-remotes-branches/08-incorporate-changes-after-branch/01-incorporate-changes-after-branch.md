@@ -591,4 +591,3 @@ $ git branch -a
 
 $ git fetch --prune
 ```
-
