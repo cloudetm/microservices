@@ -1,6 +1,20 @@
 # merge conflicts
 
-> local changes: x -> y and square 42
+> github: change `x -> z and square 24` - simulate other user
+
+1. Edit file
+
+```
+def my_square(z):
+  """uses the * operator"""
+  return(z * z)
+
+print(my_square(24))
+```
+
+2. Click `Commit changes`
+
+> local: change `x -> y and square 42`
 
 ```
 $ cat src/my_square.py 
@@ -25,20 +39,6 @@ index e17609d..56edaf7 100644
 -print(my_square(4))
 +print(my_square(42))
 ```
-
-> github changes: x -> z and square 24
-
-Edit file
-
-```
-def my_square(z):
-  """uses the * operator"""
-  return(z * z)
-
-print(my_square(24))
-```
-
-Click `Commit changes`
 
 > resolve conflicts
 
@@ -101,5 +101,4 @@ Total 5 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
 To https://github.com/pwillhan/git_lesson.git
    0125554..d76b722  master -> master
-
 ```
