@@ -8,8 +8,9 @@
 
 > github collaborator: Fork repository
 
-1. Go to https://github.com/pwillhan/git_lesson
-2. Click `Fork` button
+1. Login as collaborator `gwillhan`
+2. Go to https://github.com/pwillhan/git_lesson
+3. Click `Fork` button
 
 > collaborator: git clone repository
 
