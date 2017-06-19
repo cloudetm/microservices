@@ -14,17 +14,17 @@ DROP KEYSPACE home_security;
 
 USE home_security;
 
-CREATE TABLE activity (
+CREATE TABLE IF NOT EXISTS activity (
 home_id text,
 datetime timestamp,
 event text,
 code_used text,
 PRIMARY KEY (home_id, datetime)
-) WITH CLUSTERING ORDER BY (datetime DESC);
+);
 
 DESCRIBE TABLE activity;
 
-DROP TABLE activity;
+DROP TABLE IF EXISTS activity;
 
 > Insert
 
