@@ -5,6 +5,11 @@ import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
 
+/*
+problems:
+1. error prone
+2. expose app to injection attacks
+ */
 public class App {
 
     public static void main(String... args){
