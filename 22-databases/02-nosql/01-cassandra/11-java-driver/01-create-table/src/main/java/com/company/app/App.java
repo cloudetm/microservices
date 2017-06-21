@@ -8,6 +8,33 @@ import com.datastax.driver.core.Session;
 1, Create table
 https://www.tutorialspoint.com/cassandra/cassandra_create_table.htm
 
+CQL:
+-----------------------
+DESCRIBE KEYSPACES;
+
+CREATE KEYSPACE home_security WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+DESCRIBE KEYSPACE home_security;
+
+DROP KEYSPACE home_security;
+
+-----------------------
+USE home_security;
+
+CREATE TABLE IF NOT EXISTS activity (
+home_id text,
+datetime timestamp,
+event text,
+code_used text,
+PRIMARY KEY (home_id, datetime)
+);
+
+DESCRIBE TABLE activity;
+
+DROP TABLE IF EXISTS activity;
+
+DESCRIBE TABLES;
+
  */
 public class App
 {
