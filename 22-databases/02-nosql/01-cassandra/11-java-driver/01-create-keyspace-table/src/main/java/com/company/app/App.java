@@ -5,7 +5,10 @@ import com.datastax.driver.core.Session;
 
 /*
 
-1, Create table
+1, Create keyspace
+https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm
+
+2, Create table
 https://www.tutorialspoint.com/cassandra/cassandra_create_table.htm
 
 CQL:
@@ -44,11 +47,15 @@ public class App
             //.withCredentials("jeff", "i6XJsj!k#9")
             .build();
 
-        // create session on the "home_security" keyspace
-        Session session = cluster.connect("home_security");
+        // create session
+        Session session = cluster.connect();
+
+        dropKeyspace(session);
+        createKeyspace(session);
+
+        connectKeyspace(session);
 
         dropTable(session);
-
         createTable(session);
 
         session.close();
@@ -58,12 +65,41 @@ public class App
 
     }
 
+    public static void dropKeyspace(Session session) {
+
+        System.out.println("dropKeyspace");
+
+        String query = "DROP KEYSPACE IF EXISTS home_security;";
+
+        session.execute(query);
+    }
+
+    public static void createKeyspace(Session session) {
+
+        System.out.println("createKeyspace");
+
+        String query = "CREATE KEYSPACE home_security WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};";
+
+        session.execute(query);
+    }
+
     private static void dropTable(Session session) {
 
         System.out.println("dropTable");
 
         // Query
         String query = "DROP TABLE IF EXISTS activity;";
+
+        // Executing the query
+        session.execute(query);
+    }
+
+    private static void connectKeyspace(Session session) {
+
+        System.out.println("connectKeyspace");
+
+        // Query
+        String query = "USE home_security";
 
         // Executing the query
         session.execute(query);
@@ -85,3 +121,12 @@ public class App
     }
 
 }
+/*
+output:
+dropKeyspace
+createKeyspace
+connectKeyspace
+dropTable
+createTable
+### END
+ */
