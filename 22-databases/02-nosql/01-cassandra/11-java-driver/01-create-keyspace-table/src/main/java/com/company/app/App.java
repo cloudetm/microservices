@@ -15,11 +15,11 @@ CQL:
 -----------------------
 DESCRIBE KEYSPACES;
 
-CREATE KEYSPACE home_security WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+CREATE KEYSPACE IF NOT EXISTS home_security WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
 DESCRIBE KEYSPACE home_security;
 
-DROP KEYSPACE home_security;
+DROP KEYSPACE IF EXISTS home_security;
 
 -----------------------
 USE home_security;
@@ -78,7 +78,7 @@ public class App
 
         System.out.println("createKeyspace");
 
-        String query = "CREATE KEYSPACE home_security WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};";
+        String query = "CREATE IF NOT EXISTS KEYSPACE home_security WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};";
 
         session.execute(query);
     }
