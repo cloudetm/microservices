@@ -31,4 +31,14 @@ docker rm -f $(docker ps -a -q)
 docker rmi $(docker images -q)
 # Force delete all images
 docker rmi -f $(docker images -q)
+# Delete an image
+docker rmi myservice
 ```
+
+## note
+
+> forever to starting
+
+https://forums.docker.com/t/docker-is-starting-forever-solved-by-reinstall/13445
+
+`removing ~/Library/Containers/com.docker.*`
