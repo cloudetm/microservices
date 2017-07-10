@@ -26,6 +26,10 @@ DESCRIBE TABLE activity;
 
 DROP TABLE IF EXISTS activity;
 
+> Remove all rows
+
+TRUNCATE activity;
+
 > Insert
 
 INSERT INTO activity (
