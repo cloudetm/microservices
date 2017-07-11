@@ -25,7 +25,7 @@ http://www.datastax.com/products/datastax-devcenter-and-development-tools#DataSt
 
 ### Launch DevCenter
 
-> `cmd + space`, `DevCenter` <- location `/Users/whan/cassandra/DevCenter`
+> `cmd + space`, `DevCenter`
 
 ```
 hosts: localhost
