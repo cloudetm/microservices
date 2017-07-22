@@ -1,5 +1,7 @@
 # Hazelcast
 
-https://hazelcast.com/get-started-with-hazelcast/
+https://github.com/hazelcast/hazelcast
 
-https://www.youtube.com/watch?v=t-A_N5bK0Lg
+http://docs.hazelcast.org/docs/latest/manual/html-single/index.html#getting-started
+
+https://github.com/hazelcast/hazelcast-code-samples
